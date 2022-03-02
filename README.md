@@ -1,24 +1,39 @@
-# README
+# My Closet
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## サイト概要
+自分自身のお家のクローゼットを持ち歩けるようなアプリケーションです。
+自身の所有している服をアプリケーションに保存することで服を買いに行った際に、同じような服を買ってしまったということを防ぐためにご使用いただけます。
+また、Out Fit Of The Day（OOTD）としてコーディネートを公開し、ユーザー同士で交流を図ることもできます。
 
-Things you may want to cover:
+### サイトテーマ
+持っている服の記録と、コーディネートのシェア。
 
-* Ruby version
+### テーマを選んだ理由
+私は新しい服を買うことが好きなのですが、たくさんの服を持っているが故どのような服を持っているのか忘れてしまうことがあります。
+なので服を買いに行った際に、同じような服を持っていないか確認できるアプリケーションがあれば便利だと思い、このアプリケーションを考えました。
+また、人それぞれ服の合わせ方があり、誰かのコーディネートを参考に服を買ったり、自分のコーディネートを考えることがあるので、自身の服の記録だけではなく、
+コーディネートのシェアもできるアプリケーションにしました。
 
-* System dependencies
+### ターゲットユーザ
+ファッションを楽しみたい全ての人
 
-* Configuration
+### 主な利用シーン
+服を買いに行き、自分のクローゼットを確認したいとき。
+お気に入りのコーディネートを多くの人に見てもらいたいとき。
 
-* Database creation
+## 設計書
+<...>
 
-* Database initialization
+## チャレンジ要素一覧
+<https://docs.google.com/spreadsheets/d/1E4Quehglf9PxM1XTE-ft2X5-hJ5dmoJhsI-UJlgzVmY/edit#gid=0>
 
-* How to run the test suite
+## 開発環境
+- OS：Linux(CentOS)
+- 言語：HTML,CSS,JavaScript,Ruby,SQL
+- フレームワーク：Ruby on Rails
+- JSライブラリ：jQuery
+- IDE：Cloud9
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## 使用素材
+- 外部サービスの画像素材・音声素材を使用した場合は、必ずサービス名とURLを明記してください。
+- 使用しない場合は、使用素材の項目をREADMEから削除してください。
