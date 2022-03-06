@@ -22,6 +22,7 @@
 お気に入りのコーディネートを多くの人に見てもらいたいとき。
 
 ## 設計書
+ER図：https://drive.google.com/file/d/1fn5g_aOX52yQUlyk-Rxcgqdey6udfgRs/view?usp=sharing
 
 
 ## チャレンジ要素一覧
