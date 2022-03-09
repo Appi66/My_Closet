@@ -1,0 +1,10 @@
+<h1>Edit</h1>
+
+<%= form_with model: @post_image, url: post_image_path(@post_image.id), method: :patch do |f| %>
+
+  <h4>Caption</h4>
+  <%= f.text_area :caption %>
+
+  <%= f.submit 'Repost' %>
+
+<% end %>

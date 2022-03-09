@@ -2,7 +2,9 @@
 <% @post_images.each do |post_image| %>
 <div>
   <p>User Name：<%= post_image.user.name %></p>
-  <%= image_tag post_image.get_image %>
+  <%= link_to post_image_path(post_image.id) do %>
+    <%= image_tag post_image.get_image %>
+  <% end %>
   <p>Caption：<%= post_image.caption %></p>
 </div>
 <% end %>

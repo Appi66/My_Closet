@@ -1,2 +1,7 @@
-<h1>PostImages#show</h1>
-<p>Find me in app/views/post_images/show.html.erb</p>
+<div>
+  <p>User Name：<%= @post_image.user.name %></p>
+  <%= image_tag @post_image.get_image %>
+  <p>Caption：<%= @post_image.caption %></p>
+  <%= @post_image.created_at.strftime('%Y/%m/%d') %>
+  <%= link_to "Edit", edit_post_image_path(@post_image.id) %>
+</div>
