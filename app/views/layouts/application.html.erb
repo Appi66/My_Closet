@@ -17,6 +17,9 @@
           <%= link_to 'OOTD', new_post_image_path %>
         </li>
         <li>
+          <%= link_to "MyPage", user_path(current_user.id) %>
+        </li>
+        <li>
           <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
         </li>
       <% else %>

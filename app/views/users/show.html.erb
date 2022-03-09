@@ -1,4 +1,10 @@
-<h1>OOTD</h1>
+<!--ユーザー詳細-->
+<div>
+  <%= image_tag @user.get_profile_image(100,100) %>
+  <h3><%= @user.name %></h3>
+</div>
+
+<!--ユーザーの投稿一覧-->
 <% @post_images.each do |post_image| %>
 <div>
   <%= image_tag post_image.user.get_profile_image(50,50) %>
