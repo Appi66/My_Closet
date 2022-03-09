@@ -5,5 +5,8 @@ Rails.application.routes.draw do
   root to: "homes#top"
 
   resources :post_images, only: [:new, :create, :index, :edit, :update, :show, :destroy]
-  resources :users, only: [:show, :edit, :update]
+  resources :users, only: [:show, :edit, :update, :destroy]
+
+  get '/withdraw', to: 'users#withdraw', as: 'withdraw'
+
 end
