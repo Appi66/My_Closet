@@ -1,2 +1,8 @@
-<h1>PostImages#index</h1>
-<p>Find me in app/views/post_images/index.html.erb</p>
+<h1>OOTD</h1>
+<% @post_images.each do |post_image| %>
+<div>
+  <p>User Name：<%= post_image.user.name %></p>
+  <%= image_tag post_image.get_image %>
+  <p>Caption：<%= post_image.caption %></p>
+</div>
+<% end %>
