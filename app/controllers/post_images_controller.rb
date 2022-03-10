@@ -12,6 +12,7 @@ class PostImagesController < ApplicationController
 
   def index
     @post_images = PostImage.all.order(created_at: :desc)
+
   end
 
   def edit
@@ -25,7 +26,8 @@ class PostImagesController < ApplicationController
   end
 
   def show
-    @post_image =PostImage.find(params[:id])
+    @post_image = PostImage.find(params[:id])
+    @post_comment = PostComment.new
   end
 
   def destroy

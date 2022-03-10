@@ -2,10 +2,14 @@
 <% @post_images.each do |post_image| %>
 <div>
   <%= image_tag post_image.user.get_profile_image(50,50) %>
-  <p>User Name：<%= post_image.user.name %></p>
+  <p>User Name：<%= link_to user_path(post_image.user.id) do %>
+                <%= post_image.user.name %>
+                <% end %>
+  </p>
   <%= link_to post_image_path(post_image.id) do %>
     <%= image_tag post_image.get_image(200,200) %>
   <% end %>
   <p>Caption：<%= post_image.caption %></p>
+  <p>コメント<%= post_image.post_comments.count %>件</p>
 </div>
 <% end %>

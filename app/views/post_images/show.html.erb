@@ -8,3 +8,19 @@
     <%= link_to "Delete", post_image_path(@post_image), method: :delete, "data-confirm" => "本当に削除しますか？" %>
   <% end %>
 </div>
+
+<!--コメント投稿-->
+<div>
+  <p><%= link_to post_image_post_comment_path(@post_image.id) do %>
+     コメント<%= @post_image.post_comments.count %>件
+     <% end %>
+  </p>
+</div>
+
+<!--コメントフォーム-->
+<div>
+  <%= form_with model: [@post_image, @post_comment] do |f| %>
+    <%= f.text_area :comment, rows: '5', placeholder: "コメント" %>
+    <%= f.submit "Send" %>
+  <% end %>
+</div>
