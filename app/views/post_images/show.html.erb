@@ -1,10 +1,10 @@
 <div>
   <p>User Name：<%= @post_image.user.name %></p>
-  <%= image_tag @post_image.get_image %>
+  <%= image_tag @post_image.get_image(200,200) %>
   <p>Caption：<%= @post_image.caption %></p>
   <%= @post_image.created_at.strftime('%Y/%m/%d') %>
   <% if @post_image.user == current_user %>
     <%= link_to "Edit", edit_post_image_path(@post_image.id) %>
-    <%= link_to "Delete", post_image_path(@post_image), method: :delete, data: { confirm: "投稿を削除しますか？" } %>
+    <%= link_to "Delete", post_image_path(@post_image), method: :delete, "data-confirm" => "本当に削除しますか？" %>
   <% end %>
 </div>
