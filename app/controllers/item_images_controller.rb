@@ -11,7 +11,7 @@ class ItemImagesController < ApplicationController
   end
 
   def index
-    @item_images = ItemImage.all
+    @item_images = ItemImage.all.order(created_at: :desc)
   end
 
   def show
@@ -26,6 +26,12 @@ class ItemImagesController < ApplicationController
     item_image = ItemImage.find(params[:id])
     item_image.update(item_image_params)
     redirect_to item_image_path(item_image.id)
+  end
+
+  def destroy
+    @item_image = ItemImage.find(params[:id])
+    @item_image.destroy
+    redirect_to item_images_path
   end
 
   # アイテム追加時のストロングパラメーター
