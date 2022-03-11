@@ -1,0 +1,7 @@
+<h1><%= @item_image.name %></h1>
+<div>
+  <%= image_tag @item_image.get_image(200,200) %>
+  <p>カテゴリー：<%= @item_image.category_id %></p>
+  <p>ブランド：<%= @item_image.brand_name %></p>
+  <p>登録日：<%= @item_image.created_at.strftime('%Y/%m/%d') %></p>
+</div>

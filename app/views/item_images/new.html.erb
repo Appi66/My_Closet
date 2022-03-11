@@ -1,0 +1,14 @@
+<h1>New Item</h1>
+  <%= form_with model: @item_image do |f| %>
+  <h4>画像</h4>
+    <%= f.file_field :image, accept: "image/*" %>
+  <h4>カテゴリー</h4>
+    <%= f.collection_select :category_id, Category.all, :id, :name %>
+  <h4>アイテム名</h4>
+  　<%= f.text_field :name %>
+  <h4>ブランド</h4>
+    <%= f.text_field :brand_name %>
+    <%= f.submit 'Add' %>
+  <% end %>
+
+

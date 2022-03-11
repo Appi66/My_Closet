@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   end
 
   resources :users, only: [:show, :edit, :update, :destroy]
+  resources :item_images, only: [:new, :create, :index, :show, :edit, :update, :destroy]
 
   get '/withdraw', to: 'users#withdraw', as: 'withdraw'
 
