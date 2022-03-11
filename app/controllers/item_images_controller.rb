@@ -19,6 +19,13 @@ class ItemImagesController < ApplicationController
   end
 
   def edit
+    @item_image = ItemImage.find(params[:id])
+  end
+
+  def update
+    item_image = ItemImage.find(params[:id])
+    item_image.update(item_image_params)
+    redirect_to item_image_path(item_image.id)
   end
 
   # アイテム追加時のストロングパラメーター

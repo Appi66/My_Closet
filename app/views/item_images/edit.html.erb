@@ -1,2 +1,17 @@
-<h1>ItemImages#edit</h1>
-<p>Find me in app/views/item_images/edit.html.erb</p>
+<h1>Item Edit</h1>
+<%= form_with model: @item_image, url: item_image_path(@item_image.id), method: :patch do |f| %>
+
+  <h4>画像</h4>
+  <%= f.file_field :image, accept: "image/*" %>
+
+  <h4>カテゴリー</h4>
+  <%= f.collection_select :category_id, Category.all, :id, :name, autofocus: true, id:"inputCategory_id" %>
+  <h4>アイテム名</h4>
+  <%= f.text_field :name, autofocus: true, id:"inputName" %>
+  <h4>ブランド</h4>
+  <%= f.text_field :brand_name, autofocus: true, id:"inputBrand_name" %>
+
+  <%= f.submit 'Edit' %>
+
+<% end %>
+
