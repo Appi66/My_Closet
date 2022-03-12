@@ -13,6 +13,11 @@ class ItemImagesController < ApplicationController
   def index
     @user = User.find(current_user.id)
     @item_images = @user.item_images.order(created_at: :desc)
+    @categories = Category.all
+    if params[:category_id].present?
+      @category = Category.find(params[:category_id])
+      @item_images = @category.item_images.where(user: @user).order(created_at: :desc)
+    end
   end
 
   def show

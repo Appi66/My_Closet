@@ -1,4 +1,15 @@
 <h1>Your closet</h1>
+<table>
+    <tbody>
+        <% @categories.each do |category| %>
+        <tr>
+            <td>
+                <%= link_to category.name, item_images_path(category_id: category.id) %>
+            </td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 <% @item_images.each do |item_image| %>
 <div>
   <%= link_to item_image_path(item_image.id) do %>
