@@ -9,7 +9,12 @@ Rails.application.routes.draw do
     resources :post_comments, only: [:create, :destroy, :show]
   end
 
-  resources :users, only: [:show, :edit, :update, :destroy]
+  resources :users, only: [:show, :edit, :update, :destroy] do
+    resource :relationships, only: [:create, :destroy]
+    get 'followings' => 'relationships#followings', as: 'followings'
+    get 'followers' => 'relationships#followers', as: 'followers'
+  end
+  
   resources :item_images, only: [:new, :create, :index, :show, :edit, :update, :destroy]
 
   get '/withdraw', to: 'users#withdraw', as: 'withdraw'
