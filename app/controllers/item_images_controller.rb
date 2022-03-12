@@ -11,7 +11,8 @@ class ItemImagesController < ApplicationController
   end
 
   def index
-    @item_images = ItemImage.all.order(created_at: :desc)
+    @user = User.find(current_user.id)
+    @item_images = @user.item_images.order(created_at: :desc)
   end
 
   def show
