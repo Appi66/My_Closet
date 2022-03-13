@@ -1,0 +1,12 @@
+<h2>検索結果</h2>
+<% @item_images.each do |item_image| %>
+<div>
+  <%= link_to item_image_path(item_image.id) do %>
+   <%= image_tag item_image.get_image(200,200) %>
+  <% end %>
+  <p>カテゴリー：<%= item_image.category.name %></p>
+  <p>アイテム名：<%= item_image.name %></p>
+  <p>ブランド：<%= item_image.brand_name %></p>
+</div>
+<% end %>
+

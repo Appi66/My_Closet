@@ -11,5 +11,13 @@ class ItemImage < ApplicationRecord
     end
     image.variant(resize_to_limit: [width, height]).processed
   end  
+  
+  def self.looks(word)
+    if word.empty?
+      @item_image = ItemImage.all
+    else
+      @item_image = ItemImage.where("name LIKE?", "%#{word}%")
+    end
+  end  
 
 end

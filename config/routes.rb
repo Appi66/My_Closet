@@ -14,9 +14,10 @@ Rails.application.routes.draw do
     get 'followings' => 'relationships#followings', as: 'followings'
     get 'followers' => 'relationships#followers', as: 'followers'
   end
-  
+
   resources :item_images, only: [:new, :create, :index, :show, :edit, :update, :destroy]
 
   get '/withdraw', to: 'users#withdraw', as: 'withdraw'
+  get 'search', to: 'searches#search', as: 'search'
 
 end
