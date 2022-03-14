@@ -28,7 +28,7 @@ test:
   password: <%= ENV['DB_PASSWORD'] %>
 
 
-  production:
+production:
   <<: *default
   database: <%= ENV['DB_DATABASE'] %>
   adapter: mysql2
