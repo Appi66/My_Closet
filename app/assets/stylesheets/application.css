@@ -13,3 +13,30 @@
  *= require_tree .
  *= require_self
  */
+
+/*リセットCSS*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  width: auto;
+  padding: 15px 0;
+  margin: 0 auto;
+  text-align: center;
+  background-color: #ffd25b;
+  color: #7e5227;
+}
+
+footer {
+  width: 100%;
+  height: 60px;
+  background-color: #ffd25b;
+}
+
+.header h1 {
+  font-size: 32px;
+
+}

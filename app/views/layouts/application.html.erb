@@ -12,28 +12,36 @@
 
   <body>
     <header>
+      <h1><%= link_to "My Closet", post_images_path %></h1>
+      <nav>
       <% if user_signed_in? %>
-        <li>
-          <%= link_to 'OOTD', new_post_image_path %>
-        </li>
-        <li>
-          <%= link_to "MyPage", user_path(current_user.id) %>
-        </li>
-        <li>
-          <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-        </li>
-        <li>
-          <%= link_to "Notice", user_notifications_path(current_user.id) %>
-        </li>
+        <ul class="nav-list">
+          <li class="nav-list-item">
+            <%= link_to 'OOTD', new_post_image_path %>
+          </li>
+          <li class="nav-list-item">
+            <%= link_to "MyPage", user_path(current_user.id) %>
+          </li>
+          <li class="nav-list-item">
+            <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+          </li>
+          <li class="nav-list-item">
+            <%= link_to "Notice", user_notifications_path(current_user.id) %>
+          </li>
       <% else %>
-        <li>
-          <%= link_to "新規登録", new_user_registration_path %>
-        </li>
-        <li>
-          <%= link_to "ログイン", new_user_session_path %>
-        </li>
+          <li class="nav-list-item">
+            <%= link_to "新規登録", new_user_registration_path %>
+          </li>
+          <li class="nav-list-item">
+            <%= link_to "ログイン", new_user_session_path %>
+          </li>
+        </ul>
+      </nav>
       <% end %>
     </header>
     <%= yield %>
   </body>
+  <footer>
+    <p>Appi66</p>
+  </footer>
 </html>
