@@ -12,32 +12,33 @@
 
   <body>
     <header>
-      <h1><%= link_to "My Closet", post_images_path %></h1>
+      <h1><%= link_to "My Closet", post_images_path, class: "link" %></h1>
       <nav>
-      <% if user_signed_in? %>
-        <ul class="nav-list">
-          <li class="nav-list-item">
-            <%= link_to 'OOTD', new_post_image_path %>
+        <ul>
+        <% if user_signed_in? %>
+          <li>
+            <span class="header-link"><%= link_to 'OOTD', new_post_image_path, class: "link" %></span>
           </li>
-          <li class="nav-list-item">
-            <%= link_to "MyPage", user_path(current_user.id) %>
+          <li>
+            <span class="header-link"><%= link_to "MyPage", user_path(current_user.id), class: "link" %></span>
           </li>
-          <li class="nav-list-item">
-            <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+          <li>
+            <span class="header-link"><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "link" %></span>
           </li>
-          <li class="nav-list-item">
-            <%= link_to "Notice", user_notifications_path(current_user.id) %>
+          <li>
+            <span class="header-link"><%= link_to "Notice", user_notifications_path(current_user.id), class: "link" %></span>
           </li>
-      <% else %>
-          <li class="nav-list-item">
-            <%= link_to "新規登録", new_user_registration_path %>
+        <% else %>
+          <li>
+            <span class="header-link"><%= link_to "新規登録", new_user_registration_path, class: "link" %></span>
           </li>
-          <li class="nav-list-item">
-            <%= link_to "ログイン", new_user_session_path %>
+          <li>
+            <span class="header-link"><%= link_to "ログイン", new_user_session_path, class: "link" %></span>
           </li>
+
+         <% end %>
         </ul>
       </nav>
-      <% end %>
     </header>
     <%= yield %>
   </body>
