@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root to: "homes#top"
+  get '/about' => 'homes#about', as: 'about'
 
   resources :post_images, only: [:new, :create, :index, :edit, :update, :show, :destroy] do
     resource :favorites, only: [:create, :destroy]
@@ -11,8 +12,8 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show, :edit, :update, :destroy] do
     resource :relationships, only: [:create, :destroy]
-    get 'followings' => 'relationships#followings', as: 'followings'
-    get 'followers' => 'relationships#followers', as: 'followers'
+    get '/followings' => 'relationships#followings', as: 'followings'
+    get '/followers' => 'relationships#followers', as: 'followers'
     resources :notifications, only: [:index]
     delete '/destroy_all' => 'notifications#destroy_all'
   end
@@ -21,6 +22,6 @@ Rails.application.routes.draw do
 
 
   get '/withdraw', to: 'users#withdraw', as: 'withdraw'
-  get 'search', to: 'searches#search', as: 'search'
+  get '/search', to: 'searches#search', as: 'search'
 
 end

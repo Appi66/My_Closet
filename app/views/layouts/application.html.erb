@@ -30,6 +30,9 @@
           </li>
         <% else %>
           <li>
+            <span class="header-link"><%= link_to "About", about_path, class: "link" %></span>
+          </li>
+          <li>
             <span class="header-link"><%= link_to "新規登録", new_user_registration_path, class: "link" %></span>
           </li>
           <li>
