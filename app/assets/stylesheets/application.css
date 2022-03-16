@@ -92,3 +92,33 @@ li:last-child {
 .link {
   text-decoration: none;
 }
+
+/*TOP*/
+.main {
+  background-color: #f4f0e6;
+  display: flex;
+  align-items: center;
+}
+
+.main-visual {
+  background-image: url(mainvisual.jpg);
+  width: 60%;
+  height: 700px;
+  background-size: cover;
+}
+
+.main-massage {
+  width: 40%;
+  height: 700px;
+
+}
+
+.main-visual-text {
+  font-size: 50px;
+	color: #444a5b;
+
+}
+
+.emphasis {
+  background-image: linear-gradient(rgba(0 0 0 / 0) 70%, #9dd3a8 70%);
+}
