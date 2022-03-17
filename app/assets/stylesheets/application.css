@@ -209,6 +209,21 @@ li:last-child {
 
 }
 
-.side {
+.side-index {
   width: 20%;
 }
+
+/*post_imagesのshow*/
+.show-card {
+  padding: 10px;
+  background-color: #fff;
+  /*height: 380px;*/
+  border-style: outset;
+  margin: 0 auto;
+  width: 40%;
+}
+
+.post-image {
+  text-align: center;
+}
+

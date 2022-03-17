@@ -1,43 +1,54 @@
-<div>
-  <p>User Name：<%= @post_image.user.name %></p>
-  <%= image_tag @post_image.get_image(200,200) %>
-  <p>Caption：<%= @post_image.caption %></p>
+
+<div class="show-card">
+  <table>
+    <td>
+      <%= image_tag @post_image.user.get_profile_image(50,50), class: "profile-image" %>
+    </td>
+    <td>
+      <%= @post_image.user.name %>
+    </td>
+  </table>
+  <p class="post-image"><%= image_tag @post_image.get_image(300,250) %></p>
+  <p><%= @post_image.caption %></p>
   <%= @post_image.created_at.strftime('%Y/%m/%d') %>
-  <% if @post_image.user == current_user %>
-    <%= link_to "Edit", edit_post_image_path(@post_image.id) %>
-    <%= link_to "Delete", post_image_path(@post_image), method: :delete, "data-confirm" => "本当に削除しますか？" %>
-  <% end %>
-</div>
 
-<!--いいね-->
-<div>
-  <% if @post_image.favorited_by?(current_user) %>
-    <p>
-      <%= link_to post_image_favorites_path(@post_image), method: :delete do %>
-      💛<%= @post_image.favorites.count %>
-      <% end %>
+
+
+  <!--いいね-->
+  <div>
+    <% if @post_image.favorited_by?(current_user) %>
+      <p>
+        <%= link_to post_image_favorites_path(@post_image), method: :delete do %>
+        💛<%= @post_image.favorites.count %>
+        <% end %>
+      </p>
+    <% else %>
+      <p>
+        <%= link_to post_image_favorites_path(@post_image), method: :post do %>
+        ♡<%= @post_image.favorites.count %>
+        <% end %>
+      </p>
+    <% end %>
+  </div>
+
+  <!--コメント件数表示-->
+  <div>
+    <p><%= link_to post_image_post_comment_path(@post_image.id) do %>
+       コメント<%= @post_image.post_comments.count %>件
+       <% end %>
     </p>
-  <% else %>
-    <p>
-      <%= link_to post_image_favorites_path(@post_image), method: :post do %>
-      ♡<%= @post_image.favorites.count %>
-      <% end %>
-    </p>
-  <% end %>
-</div>
+  </div>
+  <!--編集・削除リンク　投稿者にのみ表示-->
+   <% if @post_image.user == current_user %>
+      <%= link_to "Edit", edit_post_image_path(@post_image.id) %>
+      <%= link_to "Delete", post_image_path(@post_image), method: :delete, "data-confirm" => "本当に削除しますか？" %>
+   <% end %>
 
-<!--コメント件数表示-->
-<div>
-  <p><%= link_to post_image_post_comment_path(@post_image.id) do %>
-     コメント<%= @post_image.post_comments.count %>件
-     <% end %>
-  </p>
-</div>
-
-<!--コメントフォーム-->
-<div>
-  <%= form_with model: [@post_image, @post_comment] do |f| %>
-    <%= f.text_area :comment, rows: '5', placeholder: "コメント" %>
-    <%= f.submit "Send" %>
-  <% end %>
+  <!--コメントフォーム-->
+  <div>
+    <%= form_with model: [@post_image, @post_comment] do |f| %>
+      <%= f.text_area :comment, rows: '5', placeholder: "コメント" %>
+      <%= f.submit "Send" %>
+    <% end %>
+  </div>
 </div>
