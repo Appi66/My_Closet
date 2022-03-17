@@ -21,7 +21,7 @@
         <ul>
         <% if user_signed_in? %>
           <li>
-            <span class="header-link"><%= link_to 'OOTD', new_post_image_path, class: "link" %></span>
+            <span class="header-link"><%= link_to 'Post', new_post_image_path, class: "link" %></span>
           </li>
           <li>
             <span class="header-link"><%= link_to "MyPage", user_path(current_user.id), class: "link" %></span>

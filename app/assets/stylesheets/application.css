@@ -86,10 +86,11 @@ li:last-child {
   -webkit-text-stroke: 3px #555;
   text-shadow: 4px 4px 0 #9dd3a8;
   color: rgba(0 0 0 / 0);
-  font-size: 50px;
+  font-size: 45px;
   font-weight: 700;
   font-style: italic;
   /*font-family: 'Montserrat', sans-serif;*/
+  text-align: center;
 }
 
 .link {
@@ -244,9 +245,46 @@ li:last-child {
   transition    : .3s;         /* なめらか変化 */
   box-shadow    : 6px 6px 3px #666666;  /* 影の設定 */
   border        : 2px solid rgba(157, 211, 168, 0.90);    /* 枠の指定 */
+  margin: 10px;
 }
 .submit:hover {
   box-shadow    : none;        /* カーソル時の影消去 */
   color         : rgba(157, 211, 168, 0.90);     /* 背景色     */
   background    : #ffffff;     /* 文字色     */
+}
+
+.user-page {
+  display: flex;
+}
+
+.user-info {
+  color: #444a5b;
+  width: 25%;
+  padding: 0 20px;
+}
+
+.name {
+  font-size: 25px;
+
+}
+
+.user-post {
+  width: 60%;
+}
+
+dl {
+  display: flex;
+  justify-content: space-between;
+}
+
+dt {
+  padding: 10px 10px;
+  width: 30%;
+  border-bottom: 2px solid #5b8f8f;
+}
+
+dd {
+  padding: 10px 10px;
+  width: 70%;
+  border-bottom: 2px solid #bbb;
 }

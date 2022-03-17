@@ -1,24 +1,48 @@
 
 <h2 class="heading">My Page</h2>
+<div class="user-page">
 <!--ユーザー詳細-->
-<div>
-  <%= image_tag @user.get_profile_image(100,100), class: "profile-image" %>
-  <h3><%= @user.name %></h3>
-  <h3><%= @user.introduction %></h3>
-  <h3>フォロー数: <%= @user.followings.count %></h3>
-  <h3>フォロワー数: <%= @user.followers.count %></h3>
-  <% if current_user.following?(@user) %>
+<div class="user-info">
+  <h2>User Info</h2>
+    <dl>
+      <dt><%= image_tag @user.get_profile_image(100,100), class: "profile-image" %></dt>
+      <dd><p class="name"><%= @user.name %></p></dd>
+    </dl>
+    <dl>
+      <dt>intr.</dt>
+      <dd><%= @user.introduction %></dd>
+    </dl>
+    <dl>
+      <dt>following</dt>
+      <dd>...<%= @user.followings.count %></dd>
+    </dl>
+    <dl>
+      <dt>follower</dt>
+      <dd>...<%= @user.followers.count %></dd>
+    </dl>
 
-    <%= link_to "フォロー外す", user_relationships_path(user_id: @user.id), method: :delete %>
-  <% else %>
-    <%= link_to "フォローする", user_relationships_path(user_id: @user.id), method: :post %>
-  <% end %>
 
+<!--フォローボタン-->
+
+    <% if current_user.following?(@user) %>
+      <%= link_to user_relationships_path(user_id: @user.id), class: "submit", method: :delete do %>フォロー外す<% end %>
+    <% else %>
+      <%= link_to user_relationships_path(user_id: @user.id), class: "submit", method: :post do %>フォローする<% end %>
+    <% end %>
+
+  <!--編集リンク-->
+  <div>
   <% if @user == current_user %>
     <p><%= link_to "Edit", edit_user_path(@user) %></p>
     <p><%= link_to "Add Item", new_item_image_path %></p>
   <% end %>
-</div>
+  </div>
 
+</div>
+<div class="user-post">
 <!--ユーザーの投稿一覧-->
+<div class="card-wrap">
 <%= render 'post_images/index', post_images: @post_images %>
+</div>
+</div>
+</div>
