@@ -1,0 +1,15 @@
+<% if users.exists? %>
+  <% users.each do |user| %>
+    <table>
+      <td>
+        <%= image_tag user.get_profile_image(100,100), class: "profile-image" %>
+      </td>
+      <td>
+        <%= user.name %>
+      </td>
+    </table>
+
+  <% end %>
+<% else %>
+  <p>フォロワーはいません</p>
+<% end %>

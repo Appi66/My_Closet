@@ -14,11 +14,11 @@
       </dl>
       <dl>
         <dt>following</dt>
-        <dd><%= @user.followings.count %></dd>
+        <dd><%= link_to @user.followings.count, user_followings_path(@user) %></dd>
       </dl>
       <dl>
         <dt>follower</dt>
-        <dd><%= @user.followers.count %></dd>
+        <dd><%= link_to @user.followers.count, user_followers_path(@user) %></dd>
       </dl>
 
 
