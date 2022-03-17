@@ -222,6 +222,8 @@ li:last-child {
   border-style: outset;
   margin: 0 auto;
   width: 30%;
+  color: #444a5b;
+
 }
 
 .center {
@@ -231,6 +233,11 @@ li:last-child {
 .flame {
   margin: 15px;
 }
+
+.flame-sign {
+  align-items: center;
+}
+
 
 .submit {
   display       : inline-block;
