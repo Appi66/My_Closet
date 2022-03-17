@@ -1,5 +1,7 @@
-<h3>通知</h3>
-  <%= link_to "全削除", user_destroy_all_path, method: :delete %>
+<div class="flame">
+  <h2 class="heading">Notice</h2>
+  <div class="show-card">
+  <%= link_to user_destroy_all_path, method: :delete, class: "delete-btn" do %>全削除<% end %>
 
   <% if @notifications.exists? %>
     <div>
@@ -8,3 +10,6 @@
   <% else %>
       <p>通知はありません</p>
   <% end %>
+
+  </div>
+</div>

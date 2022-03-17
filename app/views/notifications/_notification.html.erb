@@ -2,10 +2,10 @@
 <% post_image = notification.post_image %>
 
 <div>
-  <%= notification_form(notification) %>
+  ★<%= notification_form(notification) %>
   <%= "(#{time_ago_in_words(notification.created_at)} 前)" %>
   <br>
   <% if !@comment.nil? %>
-  <p><%= @comment %></p>
+  <p>コメント：<%= @comment %></p>
   <% end %>
 </div>
