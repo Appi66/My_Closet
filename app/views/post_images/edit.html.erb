@@ -1,10 +1,14 @@
+<div class="flame">
 <h1>Edit</h1>
+<div class="show-card">
 
 <%= form_with model: @post_image, url: post_image_path(@post_image.id), method: :patch do |f| %>
+  <p class="center"><%= image_tag @post_image.get_image(300,250) %></p>
+  <p class="center">Caption</p>
+  <p class="center"><%= f.text_area :caption %></p>
 
-  <h4>Caption</h4>
-  <%= f.text_area :caption %>
-
-  <%= f.submit 'Repost' %>
+  <p class="center"><%= f.submit 'Repost', class: "submit" %></p>
 
 <% end %>
+</div>
+</div>
