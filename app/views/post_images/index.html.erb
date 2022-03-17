@@ -1,34 +1,8 @@
 <h2 class="heading">OOTD</h2>
-<% @post_images.each do |post_image| %>
-<div>
-  <%= image_tag post_image.user.get_profile_image(50,50) %>
-  <p>User Name：<%= link_to user_path(post_image.user.id) do %>
-                <%= post_image.user.name %>
-                <% end %>
-  </p>
-  <%= link_to post_image_path(post_image.id) do %>
-    <%= image_tag post_image.get_image(200,200) %>
-  <% end %>
-  <p>Caption：<%= post_image.caption %></p>
-
-  <!--いいね-->
-
-  <% if post_image.favorited_by?(current_user) %>
-    <p>
-      <%= link_to post_image_favorites_path(post_image), method: :delete do %>
-      💛<%= post_image.favorites.count %>
-      <% end %>
-    </p>
-  <% else %>
-    <p>
-      <%= link_to post_image_favorites_path(post_image), method: :post do %>
-      ♡<%= post_image.favorites.count %>
-      <% end %>
-    </p>
-  <% end %>
-
-  <p>コメント<%= post_image.post_comments.count %>件</p>
-</div>
-<% end %>
-
-
+  <div class="index-position">
+    <div class="side"></div>
+      <div class="card-wrap">
+        <%= render 'index', post_images: @post_images %>
+      </div>
+    <div class="side"></div>
+  </div>

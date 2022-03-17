@@ -22,6 +22,12 @@
 
 }
 
+body {
+  background-color: #f4f0e6;
+  width: 100%;
+
+}
+
 header {
   background-color: #d9d9f3;
 }
@@ -39,7 +45,7 @@ header {
 footer {
   width: 100%;
   height: 60px;
-  background-color: #d9d9f3;
+  /*background-color: #d9d9f3;*/
   color: #444a5b;
   text-align: center;
 }
@@ -176,6 +182,33 @@ li:last-child {
 
 }
 
+/*post_imageのindex*/
+.index-card {
+  padding: 10px;
+  /*margin: 10px;*/
+  background-color: #fff;
+  /*width: 400px;*/
+  height: 380px;
+  border-style: outset;
+}
 
+.profile-image {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+}
 
+.index-position {
+  display: flex;
+}
 
+.card-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+
+}
+
+.side {
+  width: 20%;
+}

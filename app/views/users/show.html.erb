@@ -1,7 +1,8 @@
+
 <h2 class="heading">My Page</h2>
 <!--ユーザー詳細-->
 <div>
-  <%= image_tag @user.get_profile_image(100,100) %>
+  <%= image_tag @user.get_profile_image(100,100), class: "profile-image" %>
   <h3><%= @user.name %></h3>
   <h3><%= @user.introduction %></h3>
   <h3>フォロー数: <%= @user.followings.count %></h3>
@@ -20,17 +21,4 @@
 </div>
 
 <!--ユーザーの投稿一覧-->
-<% @post_images.each do |post_image| %>
-<div>
-  <%= image_tag post_image.user.get_profile_image(50,50) %>
-  <p>User Name：<%= link_to user_path(@user.id) do %>
-                <%= post_image.user.name %>
-                <% end %>
-  </p>
-  <%= link_to post_image_path(post_image.id) do %>
-    <%= image_tag post_image.get_image(200,200) %>
-  <% end %>
-  <p>Caption：<%= post_image.caption %></p>
-  <p>コメント<%= post_image.post_comments.count %>件</p>
-</div>
-<% end %>
+<%= render 'post_images/index', post_images: @post_images %>
