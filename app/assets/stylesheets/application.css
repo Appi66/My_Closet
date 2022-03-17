@@ -253,6 +253,28 @@ li:last-child {
   background    : #ffffff;     /* 文字色     */
 }
 
+
+.withdraw {
+  display       : inline-block;
+  border-radius : 20%;          /* 角丸       */
+  font-size     : 11pt;        /* 文字サイズ */
+  text-align    : center;      /* 文字位置   */
+  cursor        : pointer;     /* カーソル   */
+  padding       : 10px 10px;   /* 余白       */
+  background    : rgba(255, 255, 255, 0.90);     /* 背景色     */
+  color         : #ceefe4;    /* 文字色     */
+  line-height   : 1em;         /* 1行の高さ  */
+  transition    : .3s;         /* なめらか変化 */
+  box-shadow    : 6px 6px 3px #666666;  /* 影の設定 */
+  border        : 2px solid rgba(157, 211, 168, 0.90);    /* 枠の指定 */
+  margin: 10px;
+}
+.withdraw:hover {
+  box-shadow    : none;        /* カーソル時の影消去 */
+  color         : rgba(255, 255, 255, 0.90);     /* 背景色     */
+  background    : #ceefe4;     /* 文字色     */
+}
+
 .user-page {
   display: flex;
 }

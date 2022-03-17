@@ -1,12 +1,15 @@
-<h2>Edit Profile</h2>
-<%= form_with model: @user do |f| %>
-  <label for="inputImage">ProfileImage</label>
-  <%= f.file_field :profile_image, placeholder: "プロフィール画像", accept: "image/*" %><br>
-  <label for="inputName">Name</label>
-  <%= f.text_field :name, autofocus: true, id:"inputName", placeholder:"Name" %><br>
-  <label for="inputIntroduction">Introduction</label>
-  <%= f.text_area :introduction, autofocus: true, id:"inputIntroduction", placeholder:"Introduction" %><br>
-  <%= f.submit "Save" %>
-<% end %>
-<%= link_to "退会", withdraw_path %>
-
+<div class="flame">
+  <h2 class="heading">Edit Profile</h2>
+  <div class="show-card">
+    <%= form_with model: @user do |f| %>
+    <p class="center"><%= image_tag @user.get_profile_image(200,200) %></p>
+    <p class="center"><%= f.file_field :profile_image, placeholder: "プロフィール画像", accept: "image/*" %></p>
+    <p class="center">UserName</p>
+    <p class="center"><%= f.text_field :name, autofocus: true, id:"inputName", placeholder:"Name" %></p>
+    <p class="center">Introduction</p>
+    <p class="center"><%= f.text_area :introduction, autofocus: true, id:"inputIntroduction", placeholder:"Introduction" %></p>
+    <p class="center"><%= f.submit 'Edit', class: "submit" %></p>
+   <% end %>
+    <p class="center"><%= link_to withdraw_path, class: "withdraw link" do %>退会<% end %></p>
+  </div>
+</div>
