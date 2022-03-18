@@ -1,11 +1,15 @@
-<h1>Your closet</h1>
-<div>
-    <%= form_with url: search_path, local: true, method: :get do |f| %>
-        <%= f.text_field :word %><%= f.submit "Search" %>
-    <% end %>
-</div>
-<table>
-    <tbody>
+<h2 class="heading">My Page</h2>
+<div class="user-page">
+　<div class="sidebar">
+　 <!--アイテム検索-->
+  <div>
+      <%= form_with url: search_path, local: true, method: :get do |f| %>
+          <%= f.text_field :word %><%= f.submit "Search" %>
+      <% end %>
+
+  　<!--ジャンル一覧-->
+  <table>
+      <tbody>
         <% @categories.each do |category| %>
         <tr>
             <td>
@@ -13,16 +17,35 @@
             </td>
         </tr>
         <% end %>
-    </tbody>
-</table>
-<% @item_images.each do |item_image| %>
-<div>
-  <%= link_to item_image_path(item_image.id) do %>
-   <%= image_tag item_image.get_image(200,200) %>
-  <% end %>
-  <p>カテゴリー：<%= item_image.category.name %></p>
-  <p>アイテム名：<%= item_image.name %></p>
-  <p>ブランド：<%= item_image.brand_name %></p>
-</div>
-<% end %>
+      </tbody>
+  </table>
+  </div>
+  </div>
+  <div class="user-post">
+    <div class="card-wrap">
+    <% @item_images.each do |item_image| %>
+      <div class="itemimage-card">
+        <%= link_to item_image_path(item_image.id) do %>
+        <%= image_tag item_image.get_image(300,250) %>
+        <% end %>
+        <table>
+            <tr>
+                <td>Category..</td>
+                <td><%= item_image.category.name %></td>
+            </tr>
 
+            <tr>
+                <td>Name.........</td>
+                <td><%= item_image.name %></td>
+            </tr>
+            <tr>
+                <td>Brand........</td>
+                <td><%= item_image.brand_name %></td>
+
+        </table>
+      </div>
+    <% end %>
+    </div>
+  </div>
+
+</div>

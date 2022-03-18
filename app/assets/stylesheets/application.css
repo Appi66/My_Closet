@@ -178,6 +178,15 @@ li:last-child {
   border-style: outset;
 }
 
+.itemimage-card {
+  padding: 10px;
+  /*margin: 10px;*/
+  background-color: #fff;
+  /*width: 400px;*/
+  height: 330px;
+  border-style: outset;
+}
+
 .profile-image {
   border-radius: 50%;
   width: 50px;
@@ -271,7 +280,7 @@ li:last-child {
   display: flex;
 }
 
-.user-info {
+.sidebar {
   color: #444a5b;
   width: 25%;
   padding: 0 20px;
