@@ -322,3 +322,7 @@ dd {
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.30);
 }
 
+.notice {
+  border-bottom: dotted 1px #9dd3a8;
+
+}
