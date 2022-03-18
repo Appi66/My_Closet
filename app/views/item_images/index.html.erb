@@ -1,8 +1,10 @@
 <h2 class="heading">My Page</h2>
 <div class="user-page">
 　<div class="sidebar">
-　 <!--アイテム検索-->
   <div>
+    <!--アイテム追加ボタン-->
+    <%= link_to new_item_image_path, class: "submit link" do %>Add<% end %>
+    <!--アイテム検索-->
       <%= form_with url: search_path, local: true, method: :get do |f| %>
           <%= f.text_field :word %><%= f.submit "Search" %>
       <% end %>
@@ -24,10 +26,10 @@
   <div class="user-post">
     <div class="card-wrap">
     <% @item_images.each do |item_image| %>
-      <div class="itemimage-card">
-        <%= link_to item_image_path(item_image.id) do %>
+      <div class="index-card">
+        <p class="center"><%= link_to item_image_path(item_image.id) do %>
         <%= image_tag item_image.get_image(300,250) %>
-        <% end %>
+        <% end %></p>
         <table>
             <tr>
                 <td>Category..</td>
@@ -41,7 +43,7 @@
             <tr>
                 <td>Brand........</td>
                 <td><%= item_image.brand_name %></td>
-
+            </tr>
         </table>
       </div>
     <% end %>

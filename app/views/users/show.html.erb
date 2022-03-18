@@ -20,7 +20,14 @@
         <dt>follower</dt>
         <dd><%= link_to @user.followers.count, user_followers_path(@user) %></dd>
       </dl>
-
+      <dl>
+        <dt>Posts</dt>
+        <dd><%= @user.post_images.count %></dd>
+      </dl>
+      <dl>
+        <dt>Items</dt>
+        <dd><%= @user.item_images.count %></dd>
+      </dl>
 
     <!--フォローボタン-->
 
@@ -34,7 +41,6 @@
      <div>
        <% if @user == current_user %>
          <p><%= link_to "Edit", edit_user_path(@user) %></p>
-         <p><%= link_to "Add Item", new_item_image_path %></p>
        <% end %>
      </div>
 

@@ -178,14 +178,6 @@ li:last-child {
   border-style: outset;
 }
 
-.itemimage-card {
-  padding: 10px;
-  /*margin: 10px;*/
-  background-color: #fff;
-  /*width: 400px;*/
-  height: 330px;
-  border-style: outset;
-}
 
 .profile-image {
   border-radius: 50%;
@@ -334,4 +326,10 @@ dd {
 .notice {
   border-bottom: dotted 1px #9dd3a8;
 
+}
+
+.comment {
+  border-bottom: dotted 1px #9dd3a8;
+  margin-left: auto;
+  margin-right: auto;
 }

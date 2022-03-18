@@ -1,8 +1,28 @@
-<% @post_image.post_comments.each do |post_comment| %>
-    <p><%= image_tag post_comment.user.get_profile_image(50,50) %></p>
-    <%= post_comment.user.name %>
-    <%= post_comment.created_at.strftime('%Y/%m/%d') %><%= post_comment.comment %>
-    <% if post_comment.user == current_user %>
-      <%= link_to "Delete", post_image_post_comment_path(post_comment.post_image, post_comment), method: :delete %>
+<div class="flame">
+  <h2 class="heading">Comments</h2>
+  <div class="show-card">
+
+    <% @post_image.post_comments.each do |post_comment| %>
+      <table class="comment">
+        <tr>
+          <td><%= image_tag post_comment.user.get_profile_image(50,50), class: "profile-image" %></td>
+          <td><%= post_comment.user.name %></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><%= post_comment.comment %><%= "(#{time_ago_in_words(post_comment.created_at)} 前)" %></td>
+          <td>
+            <% if post_comment.user == current_user %>
+              <%= link_to "Delete", post_image_post_comment_path(post_comment.post_image, post_comment), method: :delete %>
+            <% end %>
+          </td>
+        </tr>
+
+      </table>
+
+
+
     <% end %>
-<% end %>
+  </div>
+</div>

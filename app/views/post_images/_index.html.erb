@@ -10,9 +10,9 @@
       <% end %>
     </td>
   </table>
-  <%= link_to post_image_path(post_image.id) do %>
+  <p class="center"><%= link_to post_image_path(post_image.id) do %>
     <%= image_tag post_image.get_image(300,250) %>
-  <% end %>
+  <% end %></p>
 
 
   <!--いいね-->
