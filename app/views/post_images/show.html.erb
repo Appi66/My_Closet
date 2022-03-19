@@ -2,10 +2,14 @@
 <div class="show-card">
   <table>
     <td>
+      <%= link_to user_path(@post_image.user.id), class: "link" do %>
       <%= image_tag @post_image.user.get_profile_image(50,50), class: "profile-image" %>
+      <% end %>
     </td>
     <td>
+      <%= link_to user_path(@post_image.user.id), class: "link" do %>
       <%= @post_image.user.name %>
+      <% end %>
     </td>
   </table>
   <p class="center"><%= image_tag @post_image.get_image(300,250) %></p>

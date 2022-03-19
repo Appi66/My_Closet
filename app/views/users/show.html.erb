@@ -14,34 +14,35 @@
       </dl>
       <dl>
         <dt>following</dt>
-        <dd><%= link_to @user.followings.count, user_followings_path(@user) %></dd>
+        <dd><p class="center"><%= link_to @user.followings.count, user_followings_path(@user) %></p></dd>
       </dl>
       <dl>
         <dt>follower</dt>
-        <dd><%= link_to @user.followers.count, user_followers_path(@user) %></dd>
+        <dd><p class="center"><%= link_to @user.followers.count, user_followers_path(@user) %></p></dd>
       </dl>
       <dl>
         <dt>Posts</dt>
-        <dd><%= @user.post_images.count %></dd>
+        <dd><p class="center"><%= @user.post_images.count %></p></dd>
       </dl>
       <dl>
         <dt>Items</dt>
-        <dd><%= @user.item_images.count %></dd>
+        <dd><p class="center"><%= @user.item_images.count %></p></dd>
       </dl>
 
     <!--フォローボタン-->
-
-    <% if current_user.following?(@user) %>
-      <%= link_to user_relationships_path(user_id: @user.id), class: "submit link", method: :delete do %>フォロー外す<% end %>
-    <% else %>
-      <%= link_to user_relationships_path(user_id: @user.id), class: "submit link", method: :post do %>フォローする<% end %>
+    <% unless @user == current_user %>
+      <% if current_user.following?(@user) %>
+        <%= link_to user_relationships_path(user_id: @user.id), class: "submit link", method: :delete do %>フォロー外す<% end %>
+      <% else %>
+        <%= link_to user_relationships_path(user_id: @user.id), class: "submit link", method: :post do %>フォローする<% end %>
+      <% end %>
     <% end %>
 
   <!--編集リンク-->
      <div>
        <% if @user == current_user %>
-         <p><%= link_to "Edit", edit_user_path(@user) %></p>
-         <p><%= link_to "Add Item", new_item_image_path %></p>
+         <p><%= link_to edit_user_path(@user),class: "submit link" do %>Edit<% end %></p>
+
        <% end %>
      </div>
 
