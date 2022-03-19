@@ -6,6 +6,10 @@ class PostImage < ApplicationRecord
   has_many :favorites, dependent: :destroy
   has_many :notifications, dependent: :destroy
 
+  # バリデーション　写真必須
+  validates :image, presence: true
+
+
 
   def get_image(width, height)
     unless image.attached?

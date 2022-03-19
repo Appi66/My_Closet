@@ -6,8 +6,11 @@ class ItemImagesController < ApplicationController
   def create
     @item_image = ItemImage.new(item_image_params)
     @item_image.user_id = current_user.id
-    @item_image.save
-    redirect_to item_images_path
+    if @item_image.save
+      redirect_to item_images_path
+    else
+      render :new
+    end  
   end
 
   def index

@@ -4,6 +4,9 @@ class ItemImage < ApplicationRecord
   belongs_to :user
   belongs_to :category
   
+    # バリデーション　写真必須
+  validates :image, presence: true
+  
   def get_image(width, height)
     unless image.attached?
       file_path = Rails.root.join('app/assets/images/no_image.jpg')

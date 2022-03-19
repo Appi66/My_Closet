@@ -50,6 +50,8 @@
 
   <!--コメントフォーム-->
   <div>
+    <%#= link_to new_post_image_post_comment_path(@post_image.id), class: "submit link" do %><%# end %>
+    <%= flash[:alert] %>
     <%= form_with model: [@post_image, @post_comment] do |f| %>
       <%= f.text_area :comment, rows: '5', placeholder: "コメント" %>
       <%= f.submit "Send" %>

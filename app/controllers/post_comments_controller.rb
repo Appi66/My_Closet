@@ -1,5 +1,7 @@
 class PostCommentsController < ApplicationController
 
+
+
   def create
    @post_image = PostImage.find(params[:post_image_id])
     @comment = current_user.post_comments.new(post_comment_params)
@@ -9,7 +11,9 @@ class PostCommentsController < ApplicationController
       # 通知の作成
       @comment_post_image.create_notification_post_comment!(current_user, @comment.id)
       redirect_to post_image_path(@post_image)
-    end
+     else
+      redirect_to post_image_path(@post_image), alert: "コメントが空欄です"
+     end
   end
 
   def show
