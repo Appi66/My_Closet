@@ -41,6 +41,7 @@
      <div>
        <% if @user == current_user %>
          <p><%= link_to "Edit", edit_user_path(@user) %></p>
+         <p><%= link_to "Add Item", new_item_image_path %></p>
        <% end %>
      </div>
 

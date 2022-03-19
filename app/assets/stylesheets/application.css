@@ -30,6 +30,7 @@ body {
 
 header {
   background-color: #d9d9f3;
+  width: 100%;
 }
 
 .wrap {
@@ -173,7 +174,7 @@ li:last-child {
   padding: 10px;
   /*margin: 10px;*/
   background-color: #fff;
-  /*width: 400px;*/
+  width: 350px;
   height: 380px;
   border-style: outset;
 }
@@ -274,7 +275,7 @@ li:last-child {
 
 .sidebar {
   color: #444a5b;
-  width: 25%;
+  width: 20%;
   padding: 0 20px;
 }
 
@@ -284,7 +285,8 @@ li:last-child {
 }
 
 .user-post {
-  width: 60%;
+  width: 70%;
+  /*margin: 0 auto;*/
 }
 
 dl {
@@ -333,3 +335,13 @@ dd {
   margin-left: auto;
   margin-right: auto;
 }
+
+.category {
+  border-bottom: dotted 1px #9dd3a8;
+  text-align: center;
+  font-size: 20px;
+  padding: 5px;
+
+}
+
+
