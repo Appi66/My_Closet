@@ -12,7 +12,7 @@ class PostCommentsController < ApplicationController
       @comment_post_image.create_notification_post_comment!(current_user, @comment.id)
       redirect_to post_image_path(@post_image)
      else
-      redirect_to post_image_path(@post_image), alert: "コメントが空欄です"
+      redirect_to post_image_path(@post_image), alert: "ERROR:コメントが空欄です"
      end
   end
 

@@ -18,20 +18,14 @@
 
 
   <!--いいね-->
-  <% if post_image.favorited_by?(current_user) %>
-    <p>
-      <%= link_to post_image_favorites_path(post_image), method: :delete do %>
-      💛<%= post_image.favorites.count %>
-      <% end %>
-    </p>
-  <% else %>
-    <p>
-      <%= link_to post_image_favorites_path(post_image), method: :post do %>
-      ♡<%= post_image.favorites.count %>
-      <% end %>
-    </p>
-  <% end %>
+  <div>
+    <div id="favorite_buttons_<%= post_image.id %>">
+      <%= render "favorites/favorites", post_image: post_image %>
+    </div>
+    <div>
+      コメント<%= post_image.post_comments.count %>件
+    </div>
+  </div>
 
-  <p>コメント<%= post_image.post_comments.count %>件</p>
 </div>
 <% end %>
