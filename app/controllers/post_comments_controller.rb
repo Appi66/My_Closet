@@ -2,6 +2,7 @@ class PostCommentsController < ApplicationController
 
   def index
     @post_image = PostImage.find(params[:post_image_id])
+    @post_comment = PostComment.new
   end
 
 
@@ -26,7 +27,7 @@ class PostCommentsController < ApplicationController
 
   def destroy
     PostComment.find(params[:id]).destroy
-    redirect_to post_image_path(params[:post_image_id])
+    redirect_to post_image_post_comments_path(params[:post_image_id])
   end
 
 

@@ -1,8 +1,6 @@
-<%= link_to post_image_post_comments_path(post_image.id) do %>
-    コメント<%= post_image.post_comments.count %>件
-<% end %>
+
 <%= flash[:alert] %>
-<%= form_with model: [post_image, post_comment],local: false do |f| %>
-  <%= f.text_area :comment, rows: '5', placeholder: "コメント", id: "new_comment" %>
-  <%= f.submit "Send" %>
+<%= form_with model: [post_image, post_comment],local: false do |f| %></p>
+  <p class="center"><%= f.text_area :comment, rows: '5', placeholder: "コメント", id: "new_comment" %></p>
+  <p class="center"><%= f.submit "Send", class: "submit" %></p>
 <% end %>

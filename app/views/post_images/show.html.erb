@@ -1,39 +1,40 @@
 <div class="flame">
-<div class="show-card">
-  <table>
-    <td>
-      <%= link_to user_path(@post_image.user.id), class: "link" do %>
-      <%= image_tag @post_image.user.get_profile_image(50,50), class: "profile-image" %>
-      <% end %>
-    </td>
-    <td>
-      <%= link_to user_path(@post_image.user.id), class: "link" do %>
-      <%= @post_image.user.name %>
-      <% end %>
-    </td>
-  </table>
-  <p class="center"><%= image_tag @post_image.get_image(300,250) %></p>
-  <p><%= @post_image.caption %></p>
-  <%= @post_image.created_at.strftime('%Y/%m/%d') %>
+  <div class="show-card">
+    <table>
+      <td>
+        <%= link_to user_path(@post_image.user.id), class: "link" do %>
+        <%= image_tag @post_image.user.get_profile_image(50,50), class: "profile-image" %>
+        <% end %>
+      </td>
+      <td>
+        <%= link_to user_path(@post_image.user.id), class: "link" do %>
+        <%= @post_image.user.name %>
+        <% end %>
+      </td>
+    </table>
+    <p class="center"><%= image_tag @post_image.get_image(300,250) %></p>
+    <p><%= @post_image.caption %></p>
+    <%= @post_image.created_at.strftime('%Y/%m/%d') %>
 
 
 
   <!--いいね-->
     <div id="favorite_buttons_<%= @post_image.id %>">
-      <%= render "favorites/favorites", post_image: @post_image %>
+      <%= render "favorites/favorites", post_image: @post_image %>コメント<%= @post_image.post_comments.count %>件
     </div>
 
+    <!--コメント件数、コメントフォームへのリンク-->
+　　<p><%= link_to post_image_post_comments_path(@post_image.id), class: "submit link" do %>コメントする/見る<% end %>
+    </p>
 
 
-  <!--コメント件数とコメントフォーム-->
-  <div id="comment_form">
-    <%= render 'post_comments/form', post_image: @post_image, post_comment: @post_comment %>
-  </div>
 
     <!--編集・削除リンク　投稿者にのみ表示-->
+    <div>
    <% if @post_image.user == current_user %>
       <%= link_to "Edit", edit_post_image_path(@post_image.id) %>
       <%= link_to "Delete", post_image_path(@post_image), method: :delete, "data-confirm" => "本当に削除しますか？" %>
    <% end %>
-</div>
+    </div>
+  </div>
 </div>

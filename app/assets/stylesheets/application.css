@@ -332,8 +332,8 @@ dd {
 
 .comment {
   border-bottom: dotted 1px #9dd3a8;
-  margin-left: auto;
-  margin-right: auto;
+  /*margin-left: auto;*/
+  /*margin-right: auto;*/
 }
 
 .category {
@@ -344,4 +344,6 @@ dd {
 
 }
 
-
+.left {
+  text-align: left;
+}
