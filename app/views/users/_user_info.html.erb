@@ -1,0 +1,25 @@
+<h2>User Info</h2>
+      <dl>
+        <dt><%= image_tag user.get_profile_image(100,100), class: "profile-image" %></dt>
+        <dd><p class="name"><%= user.name %></p></dd>
+      </dl>
+      <dl>
+        <dt>intr.</dt>
+        <dd><%= user.introduction %></dd>
+      </dl>
+      <dl>
+        <dt>following</dt>
+        <dd><p class="center"><%= link_to user.followings.count, user_followings_path(user), remote: true, class: "link" %>　<%= link_to "一覧", user_followings_path(user) %></p></dd>
+      </dl>
+      <dl>
+        <dt>follower</dt>
+        <dd><p class="center"><%= link_to user.followers.count, user_followers_path(user), remote: true, class: "link" %>　<%= link_to "一覧", user_followers_path(user) %></p></dd>
+      </dl>
+      <dl>
+        <dt>Posts</dt>
+        <dd><p class="center"><%= user.post_images.count %></p></dd>
+      </dl>
+      <dl>
+        <dt>Items</dt>
+        <dd><p class="center"><%= user.item_images.count %></p></dd>
+      </dl>

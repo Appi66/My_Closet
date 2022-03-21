@@ -3,40 +3,15 @@
   <div class="user-page">
     <!--ユーザー詳細-->
     <div class="sidebar">
-    <h2>User Info</h2>
-      <dl>
-        <dt><%= image_tag @user.get_profile_image(100,100), class: "profile-image" %></dt>
-        <dd><p class="name"><%= @user.name %></p></dd>
-      </dl>
-      <dl>
-        <dt>intr.</dt>
-        <dd><%= @user.introduction %></dd>
-      </dl>
-      <dl>
-        <dt>following</dt>
-        <dd><p class="center"><%= link_to @user.followings.count, user_followings_path(@user) %></p></dd>
-      </dl>
-      <dl>
-        <dt>follower</dt>
-        <dd><p class="center"><%= link_to @user.followers.count, user_followers_path(@user) %></p></dd>
-      </dl>
-      <dl>
-        <dt>Posts</dt>
-        <dd><p class="center"><%= @user.post_images.count %></p></dd>
-      </dl>
-      <dl>
-        <dt>Items</dt>
-        <dd><p class="center"><%= @user.item_images.count %></p></dd>
-      </dl>
+      <div id="user_info">
+        <%= render "user_info", user: @user %>
+      </div>
+
 
     <!--フォローボタン-->
-    <% unless @user == current_user %>
-      <% if current_user.following?(@user) %>
-        <%= link_to user_relationships_path(user_id: @user.id), class: "submit link", method: :delete do %>フォロー外す<% end %>
-      <% else %>
-        <%= link_to user_relationships_path(user_id: @user.id), class: "submit link", method: :post do %>フォローする<% end %>
-      <% end %>
-    <% end %>
+    <div id="follow_button">
+      <%= render "relationships/follow_button", user: @user %>
+    </div>
 
   <!--編集リンク-->
      <div>
