@@ -359,3 +359,38 @@ dd {
 .count {
   color: #444a5b;
 }
+
+.pagination{
+  width: fit-content;
+  margin: 25px auto;
+  font-size: 0.8rem;
+  line-height: 2rem;
+
+}
+
+.first a,
+.prev a,
+.page a,
+.next a,
+.last a{
+  color: #9dd3a8;
+  text-decoration: none;
+  padding: 5px;
+  border: 1px solid #9dd3a8;
+  border-radius: 7px;
+}
+
+.first a:hover,
+.prev a:hover,
+.page a:hover,
+.next a:hover,
+.last a:hover{
+  border: 1px solid #ffffff;;
+  background-color: #9dd3a8;
+  color: #ffffff;
+
+}
+
+span.current{
+  color: #9dd3a8;
+}
