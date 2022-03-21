@@ -347,3 +347,11 @@ dd {
 .left {
   text-align: left;
 }
+
+.paginate-box {
+  display: flex;
+}
+
+.paginate {
+  margin: 0 auto;
+}

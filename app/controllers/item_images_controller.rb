@@ -10,16 +10,16 @@ class ItemImagesController < ApplicationController
       redirect_to item_images_path
     else
       render :new
-    end  
+    end
   end
 
   def index
     @user = User.find(current_user.id)
-    @item_images = @user.item_images.order(created_at: :desc)
+    @item_images = @user.item_images.order(created_at: :desc).page(params[:page])
     @categories = Category.all
     if params[:category_id].present?
       @category = Category.find(params[:category_id])
-      @item_images = @category.item_images.where(user: @user).order(created_at: :desc)
+      @item_images = @category.item_images.where(user: @user).order(created_at: :desc).page(params[:page])
     end
   end
 
