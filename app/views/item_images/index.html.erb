@@ -25,6 +25,11 @@
   </div>
   <!--ユーザーの投稿一覧-->
   <div class="user-post">
+    <% if @item_images.exists? %>
+      <h2 class="count">Total..<%= @item_images.total_count %></h2>
+    <% else %>
+      <h2 class="count">アイテムはありません</h2>
+    <% end %>
     <div class="card-wrap">
       <%= render 'index', item_images: @item_images %>
     </div>

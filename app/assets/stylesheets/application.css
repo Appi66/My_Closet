@@ -355,3 +355,7 @@ dd {
 .paginate {
   margin: 0 auto;
 }
+
+.count {
+  color: #444a5b;
+}
