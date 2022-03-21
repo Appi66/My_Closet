@@ -1,4 +1,9 @@
 <h2 class="heading">Search Result</h2>
+    <% if @item_images.exists? %>
+      <h2 class="count">Total..<%= @item_images.total_count %></h2>
+    <% else %>
+      <h2 class="count">アイテムはありません</h2>
+    <% end %>
   <div class="index-position">
     <div class="side-index"></div>
       <div class="card-wrap">
@@ -6,5 +11,10 @@
       </div>
     <div class="side-index"></div>
   </div>
+<div class="paginate-box">
+  <div class="paginate">
+     <%= paginate @item_images %>
+  </div>
+</div>
 
 
