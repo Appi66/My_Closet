@@ -5,9 +5,11 @@
     <p class="main-visual-text"><span class="emphasis">ファッション好き</span>が<br>
     集う場所</p>
     <div class="button">
-    <%= link_to new_user_registration_path, class: "link" do %><div class="btn btn-border">Join!</div><% end %><br>
-
-    <%= link_to new_user_session_path, class: "link" do %><div class="btn btn-border">LogIn!</div><% end %>
+    <% if user_signed_in? %>
+      <%= link_to post_images_path, class: "link" do %><div class="btn btn-border">Go!</div><% end %>
+    <% else %>
+      <%= link_to new_user_registration_path, class: "link" do %><div class="btn btn-border">Join!</div><% end %><br>
+    <% end %>
     </div>
   </div>
 </div>
