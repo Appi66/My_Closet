@@ -6,7 +6,8 @@
     <%= link_to new_item_image_path, class: "submit link" do %>Add<% end %>
     <!--アイテム検索-->
       <%= form_with url: search_path, local: true, method: :get do |f| %>
-          <%= f.text_field :word, placeholder: "アイテム名" %><%= f.submit "Search" %>
+        <div class="search-form"><%= f.text_field :word, placeholder: "アイテム名", class: "search-box" %><%= f.submit "Search", class: "search-btn" %></div>
+          
       <% end %>
 
   　<!--ジャンル一覧-->

@@ -13,6 +13,7 @@
  *= require_tree .
  *= require_self
  */
+ @import "skippr";
 
 /*リセットCSS*/
 * {
@@ -83,7 +84,7 @@ li:last-child {
 }
 
 .heading {
-
+  margin-bottom: 10px;
   -webkit-text-stroke: 3px #555;
   text-shadow: 4px 4px 0 #9dd3a8;
   color: rgba(0 0 0 / 0);
@@ -227,24 +228,25 @@ li:last-child {
 
 
 .submit {
-  display       : inline-block;
-  border-radius : 20%;          /* 角丸       */
-  font-size     : 11pt;        /* 文字サイズ */
-  text-align    : center;      /* 文字位置   */
-  cursor        : pointer;     /* カーソル   */
-  padding       : 10px 10px;   /* 余白       */
-  background    : rgba(157, 211, 168, 0.90);     /* 背景色     */
-  color         : #ffffff;     /* 文字色     */
-  line-height   : 1em;         /* 1行の高さ  */
-  transition    : .3s;         /* なめらか変化 */
-  box-shadow    : 6px 6px 3px #666666;  /* 影の設定 */
-  border        : 2px solid rgba(157, 211, 168, 0.90);    /* 枠の指定 */
+  display: inline-block;
+  border-radius: 20%;          /* 角丸       */
+  font-size: 11pt;
+  font-weight: bold;
+  text-align: center;      /* 文字位置   */
+  cursor: pointer;     /* カーソル   */
+  padding: 10px 10px;   /* 余白       */
+  background: rgba(157, 211, 168, 0.90);     /* 背景色     */
+  color: #ffffff;
+  line-height: 1em;         /* 1行の高さ  */
+  transition: .3s;         /* なめらか変化 */
+  box-shadow: 6px 6px 3px #666666;  /* 影の設定 */
+  border: 2px solid rgba(157, 211, 168, 0.90);    /* 枠の指定 */
   margin: 10px;
 }
 .submit:hover {
-  box-shadow    : none;        /* カーソル時の影消去 */
-  color         : rgba(157, 211, 168, 0.90);     /* 背景色     */
-  background    : #ffffff;     /* 文字色     */
+  box-shadow: none;        /* カーソル時の影消去 */
+  color: rgba(157, 211, 168, 0.90);
+  background: #ffffff;
 }
 
 
@@ -405,4 +407,96 @@ span.current{
 
 .gray {
   color: #444a5b;
+}
+
+.search-form{
+  margin-top: 15px;/*フォームの下に余白*/
+}
+
+.search-box {
+  left: 0;
+  top: 0;
+  outline: 0;/*クリック時の青い枠線消す*/
+  height: 40px;/*検索ボックスの高さ*/
+  padding: 0 10px;/*テキスト位置調整*/
+  border-radius: 7px;/*検索ボックスの角を丸める*/
+  background: #eee;/*検索ボックスの背景カラー*/
+}
+
+.search-btn {
+  width: 60px;/*検索ボタンの横幅*/
+  height: 38px;/*検索ボタンの縦幅*/
+  margin-left: 1px;
+  left: 270px;/*検索ボタンの位置調整*/
+  top: 0;
+  border-radius: 7px;/*検索ボタンの角を丸める*/
+  background: #9dd3a8;/*検索ボタンの背景カラー*/
+  border: none;/*検索ボタンの枠線を消す*/
+  color: #fff;/*検索ボタンのテキストカラー*/
+  font-weight: bold;/*検索ボタンのテキスト太字*/
+  font-size: 16px;/*検索ボタンのフォントサイズ*/
+}
+
+/*検索ボタンマウスオーバー時*/
+.search-btn:hover {
+  color: #666;
+}
+
+/*aboutページ*/
+.about-wrap {
+  display: flex;
+  align-items: center;
+  margin: 0 auto 50px;
+  width: 65%;
+}
+
+.about-wrap:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.image {
+  width: 80%;
+}
+
+.about-text {
+  padding: 0 30px;
+  width: 50%;
+  color: #444a5b;
+  font-size: 30px;
+}
+
+img {
+  /*display: block;*/
+  /*width: 100%;*/
+  /*height: auto;*/
+  border-radius: 30px;
+}
+
+/*skipper*/
+.slide {
+  display: flex;
+}
+
+#box{
+  height: 500px;
+  width: 60%;
+  margin: 0 auto;
+}
+.image1 {
+  background-image: url(StockSnap1.jpg);
+}
+.image2 {
+  background-image: url(StockSnap2.jpg);
+}
+.image3 {
+  background-image: url(StockSnap3.jpg);
+}
+.image4 {
+  background-image: url(StockSnap4.jpg);
+}
+.image5 {
+  background-image: url(StockSnap5.jpg);
+}
+.image6 {
+  background-image: url(StockSnap6.jpg);
 }
