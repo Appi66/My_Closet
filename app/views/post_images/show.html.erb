@@ -32,8 +32,8 @@
     <!--編集・削除リンク　投稿者にのみ表示-->
     <div>
    <% if @post_image.user == current_user %>
-      <%= link_to "Edit", edit_post_image_path(@post_image.id) %>
-      <%= link_to "Delete", post_image_path(@post_image), method: :delete, "data-confirm" => "本当に削除しますか？" %>
+      <%= link_to edit_post_image_path(@post_image.id), class: "gray" do %><i class="far fa-edit"></i><% end %>
+      <%= link_to post_image_path(@post_image), method: :delete, "data-confirm" => "本当に削除しますか？", class: "gray" do %><i class="far fa-trash-alt"></i><% end %>
    <% end %>
     </div>
   </div>

@@ -21,29 +21,29 @@
         <ul>
         <% if user_signed_in? %>
           <li>
-            <span class="header-link"><%= link_to 'Post', new_post_image_path, class: "link" %></span>
+            <span class="header-link"><%= link_to new_post_image_path, class: "link" do %><i class="fas fa-camera"></i> Post<% end %></span>
           </li>
           <li>
-            <span class="header-link"><%= link_to "MyPage", user_path(current_user.id), class: "link" %></span>
+            <span class="header-link"><%= link_to user_path(current_user.id), class: "link" do %><i class="far fa-user-circle"></i> MyPage<% end %></span>
           </li>
           <li>
-            <span class="header-link"><%= link_to "MyCloset", item_images_path, class: "link" %></span>
+            <span class="header-link"><%= link_to item_images_path, class: "link" do %><i class="fas fa-tshirt"></i> MyCloset<% end %></span>
           </li>
           <li>
-            <span class="header-link"><%= link_to "LogOut", destroy_user_session_path, method: :delete, class: "link" %></span>
+            <span class="header-link"><%= link_to destroy_user_session_path, method: :delete, class: "link" do %><i class="fas fa-sign-out-alt"></i> LogOut<% end %></span>
           </li>
           <li>
-            <span class="header-link"><%= link_to "Notice", user_notifications_path(current_user.id), class: "link" %></span>
+            <span class="header-link"><%= link_to user_notifications_path(current_user.id), class: "link" do %><i class="fas fa-bell"></i> Notice<% end %></span>
           </li>
         <% else %>
           <li>
-            <span class="header-link"><%= link_to "About", about_path, class: "link" %></span>
+            <span class="header-link"><%= link_to about_path, class: "link" do %><i class="far fa-star"></i> About<% end %></span>
           </li>
           <li>
-            <span class="header-link"><%= link_to "SignUp", new_user_registration_path, class: "link" %></span>
+            <span class="header-link"><%= link_to new_user_registration_path, class: "link" do %><i class="fas fa-user-plus"></i> SignUp<% end %></span>
           </li>
           <li>
-            <span class="header-link"><%= link_to "LogIn", new_user_session_path, class: "link" %></span>
+            <span class="header-link"><%= link_to new_user_session_path, class: "link" do %><i class="fas fa-sign-in-alt"></i> LogIn<% end %></span>
           </li>
 
          <% end %>

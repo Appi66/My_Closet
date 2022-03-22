@@ -22,8 +22,8 @@
     </tr>
   </table>
 
-  <%= link_to "Edit", edit_item_image_path(@item_image.id) %>
-  <%= link_to "Delete", item_image_path(@item_image), method: :delete, "data-confirm" => "本当に削除しますか？" %>
+  <%= link_to edit_item_image_path(@item_image.id), class: "gray" do %><i class="far fa-edit"></i><% end %>
+  <%= link_to item_image_path(@item_image), method: :delete, "data-confirm" => "本当に削除しますか？", class: "gray" do %><i class="far fa-trash-alt"></i><% end %>
 
   </div>
 </div>

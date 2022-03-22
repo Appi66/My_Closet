@@ -394,3 +394,15 @@ dd {
 span.current{
   color: #9dd3a8;
 }
+
+.like-before {
+  color: #ff6c94;
+}
+
+.like-after {
+  color: #ff006f;
+}
+
+.gray {
+  color: #444a5b;
+}

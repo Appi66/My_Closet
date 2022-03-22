@@ -10,7 +10,7 @@
           <td><%= post_comment.comment %><%= "(#{time_ago_in_words(post_comment.created_at)} 前)" %></td>
           <td>
             <% if post_comment.user == current_user %>
-              <%= link_to "Delete", post_image_post_comment_path(post_comment.post_image, post_comment), method: :delete, remote: true %>
+              <%= link_to post_image_post_comment_path(post_comment.post_image, post_comment), method: :delete, remote: true, class: "gray" do %><i class="far fa-trash-alt"></i><% end %>
             <% end %>
           </td>
         </tr>

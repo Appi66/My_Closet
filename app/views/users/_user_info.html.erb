@@ -9,17 +9,17 @@
       </dl>
       <dl>
         <dt>following</dt>
-        <dd><p class="center"><%= link_to user.followings.count, user_followings_path(user), remote: true, class: "link" %>　<%= link_to "一覧", user_followings_path(user) %></p></dd>
+        <dd><p class="center"><%= link_to user.followings.count, user_followings_path(user), remote: true, class: "link" %>　<%= link_to user_followings_path(user) do %><i class="fas fa-clipboard-list"></i><% end %></p></dd>
       </dl>
       <dl>
         <dt>follower</dt>
-        <dd><p class="center"><%= link_to user.followers.count, user_followers_path(user), remote: true, class: "link" %>　<%= link_to "一覧", user_followers_path(user) %></p></dd>
+        <dd><p class="center"><%= link_to user.followers.count, user_followers_path(user), remote: true, class: "link" %>　<%= link_to user_followers_path(user) do %><i class="fas fa-clipboard-list"></i><% end %></p></dd>
       </dl>
       <dl>
-        <dt>Posts</dt>
+        <dt>posts</dt>
         <dd><p class="center"><%= user.post_images.count %></p></dd>
       </dl>
       <dl>
-        <dt>Items</dt>
+        <dt>items</dt>
         <dd><p class="center"><%= user.item_images.count %></p></dd>
       </dl>

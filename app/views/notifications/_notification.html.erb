@@ -3,8 +3,8 @@
 
 <div>
   <div class="notice">
-  ★<%= notification_form(notification) %>
-  <%= "(#{time_ago_in_words(notification.created_at)} 前)" %>
+  ★ <%= notification_form(notification) %><br>
+  <%= "(#{time_ago_in_words(notification.created_at)} before)" %>
   <br>
   <% if !@comment.nil? %>
   <p>コメント：<%= @comment %></p>

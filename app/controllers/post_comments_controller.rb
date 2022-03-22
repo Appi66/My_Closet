@@ -15,7 +15,6 @@ class PostCommentsController < ApplicationController
      if @comment.save
       # 通知の作成
       @comment_post_image.create_notification_post_comment!(current_user, @comment.id)
-      # redirect_to post_image_path(@post_image)
      else
       redirect_to  post_image_post_comments_path(@post_image), alert: "ERROR:コメントが空欄です"
      end
@@ -29,7 +28,6 @@ class PostCommentsController < ApplicationController
   def destroy
     @post_image = PostImage.find(params[:post_image_id])
     PostComment.find(params[:id]).destroy
-    # redirect_to post_image_post_comments_path(params[:post_image_id])
   end
 
 
