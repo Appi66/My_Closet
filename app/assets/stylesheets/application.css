@@ -212,7 +212,7 @@ li:last-child {
   /*height: 380px;*/
   border-style: outset;
   margin: 0 auto;
-  width: 30%;
+  width: 350px;
   color: #444a5b;
 
 }
@@ -512,13 +512,114 @@ span.current{
 
 
 
-/*スマートフォンサイズ（４２５px）以下*/
+
+/* タブレット横置きサイズ（1024px）以下の際に適用される設定 */
+@media screen and (max-width:1024px) {
+  .side-index {
+    width: 0%;
+  }
+
+  .card-wrap {
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .sidebar {
+    width: 30%;
+  }
+}
+
+/* タブレット縦置きサイズ（768px）以下の際に適用される設定 */
+@media screen and (max-width:768px) {
+  .side-index {
+    width: 0%;
+  }
+
+  .card-wrap {
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+ .user-page {
+    display: block;
+    width: 100%;
+  }
+
+  .sidebar {
+    margin: 0 auto;
+    width: 70%;
+    padding: 0 20px;
+  }
+
+  .user-post {
+    margin: 0 auto;
+    width: 95%;
+  }
+
+  .category-position {
+    margin: 0 auto;
+  }
+
+  .slide {
+    display: block;
+  }
+  #box{
+    height: 500px;
+    width: 100%;
+  }
+
+  .about-wrap {
+    display: block;
+    width: 100%;
+  }
+
+  .image {
+    width: 100%;
+  }
+
+  .about-text {
+    margin: 8px;
+    width: 100%;
+    font-size: 25px;
+    text-align: center;
+  }
+
+  .about-msg {
+    width: 100%;
+    margin: 20px auto;
+  }
+
+  .top-main {
+    display: block;
+    align-items: center;
+  }
+
+  .main-visual {
+    width: 100%;
+    height: 300px;
+  }
+
+  .main-visual-text {
+    font-size: 30px;
+    text-align: center;
+    margin: 20px;
+  }
+
+ .main-massage {
+    width: 100%;
+  }
+
+
+}
+
+
 @media screen and (max-width:425px) {
   .wrap {
   　display: block;
-    /*justify-content: center;*/
-    align-items: center;
-
   }
 
   .logo {
@@ -527,16 +628,10 @@ span.current{
 
   ul {
     display: block;
-    justify-content: center;
-    /*flex: 1;*/
-    list-style: none;
   }
   .header-link {
     display: block;
-    /*flex-direction: column;*/
-    font-weight: 700;
-    text-align: center;
-    line-height: 1.6;
+    font-weight: 400;
   }
 
   li:not(:last-child) {
@@ -551,11 +646,12 @@ span.current{
     display: block;
     align-items: center;
   }
+
   .main-visual {
     width: 100%;
     height: 200px;
-    background-size: cover;
   }
+
   .main-visual-text {
     font-size: 23px;
     text-align: center;
@@ -592,14 +688,11 @@ span.current{
 
   .about-wrap {
     display: block;
-    /*align-items: center;*/
-    /*margin: 50px auto 50px;*/
     width: 100%;
   }
 
   .image {
     width: 100%;
-    /*align-items: center;*/
   }
 
   .about-text {
@@ -662,6 +755,4 @@ span.current{
   .category-position {
     margin: 0 auto;
   }
-
-
 }
