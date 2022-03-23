@@ -510,35 +510,44 @@ span.current{
   margin: 20px auto;
 }
 
-.logo {
-  width: 90px;
-  height: 80px;
-}
+
 
 /*スマートフォンサイズ（４２５px）以下*/
 @media screen and (max-width:425px) {
   .wrap {
   　display: block;
-    justify-content: center;
+    /*justify-content: center;*/
     align-items: center;
 
   }
+
+  .logo {
+  width: auto;
+  }
+
   ul {
     display: block;
-    /*justify-content: flex-end;*/
+    justify-content: center;
     /*flex: 1;*/
     list-style: none;
   }
   .header-link {
-    /*display: flex;*/
+    display: block;
     /*flex-direction: column;*/
     font-weight: 700;
     text-align: center;
     line-height: 1.6;
   }
 
+  li:not(:last-child) {
+    margin-right: 0px;
+  }
+
+  li:last-child {
+    margin-right: 0px;
+  }
+
   .top-main {
-    background-color: #f4f0e6;
     display: block;
     align-items: center;
   }
@@ -551,6 +560,10 @@ span.current{
     font-size: 23px;
     text-align: center;
     margin: 20px;
+ }
+
+ .main-massage {
+    width: 100%;
  }
 
  .show-card {
@@ -573,7 +586,7 @@ span.current{
     margin-bottom: 3px;
     -webkit-text-stroke: 1.5px #555;
     text-shadow: 2px 2px 0 #9dd3a8;
-    font-size: 20px;
+    font-size: 25px;
     font-weight: 200;
   }
 
@@ -624,5 +637,31 @@ span.current{
   .show-card {
     width: 100%;
   }
+
+  .user-page {
+    display: block;
+  }
+
+  .sidebar {
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  .user-post {
+    width: 100%;
+  }
+
+  .category {
+    border-bottom: dotted 1px #9dd3a8;
+    text-align: center;
+    font-size: 15px;
+    padding: 5px;
+
+  }
+
+  .category-position {
+    margin: 0 auto;
+  }
+
 
 }
