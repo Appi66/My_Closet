@@ -10,5 +10,6 @@
       <p class="center"><%= f.submit 'Repost', class: "submit" %></p>
 
     <% end %>
+    <%= link_to post_image_path(@post_image.id), class: "gray" do %><i class="fas fa-arrow-alt-circle-left"></i><% end %>
   </div>
 </div>

@@ -20,7 +20,10 @@
 
   <!--いいね-->
     <div id="favorite_buttons_<%= @post_image.id %>">
-      <%= render "favorites/favorites", post_image: @post_image %>コメント<%= @post_image.post_comments.count %>件
+      <%= render "favorites/favorites", post_image: @post_image %>
+    </div>
+    <div>
+      コメント<%= @post_image.post_comments.count %>件
     </div>
 
     <!--コメント件数、コメントフォームへのリンク-->
@@ -31,6 +34,7 @@
 
     <!--編集・削除リンク　投稿者にのみ表示-->
     <div>
+      <%= link_to post_images_path, class: "gray" do %><i class="fas fa-arrow-alt-circle-left"></i><% end %>
    <% if @post_image.user == current_user %>
       <%= link_to edit_post_image_path(@post_image.id), class: "gray" do %><i class="far fa-edit"></i><% end %>
       <%= link_to post_image_path(@post_image), method: :delete, "data-confirm" => "本当に削除しますか？", class: "gray" do %><i class="far fa-trash-alt"></i><% end %>

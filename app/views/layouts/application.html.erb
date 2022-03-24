@@ -8,6 +8,7 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= favicon_link_tag('favicon.ico') %>
   </head>
 
   <body>
@@ -30,10 +31,10 @@
             <span class="header-link"><%= link_to item_images_path, class: "link" do %><i class="fas fa-tshirt"></i> MyCloset<% end %></span>
           </li>
           <li>
-            <span class="header-link"><%= link_to destroy_user_session_path, method: :delete, class: "link" do %><i class="fas fa-sign-out-alt"></i> LogOut<% end %></span>
+            <span class="header-link"><%= link_to user_notifications_path(current_user.id), class: "link" do %><i class="fas fa-bell"></i> Notice<% end %></span>
           </li>
           <li>
-            <span class="header-link"><%= link_to user_notifications_path(current_user.id), class: "link" do %><i class="fas fa-bell"></i> Notice<% end %></span>
+            <span class="header-link"><%= link_to destroy_user_session_path, method: :delete, class: "link" do %><i class="fas fa-sign-out-alt"></i> LogOut<% end %>
           </li>
         <% else %>
           <li>
