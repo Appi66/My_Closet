@@ -44,3 +44,8 @@ https://docs.google.com/spreadsheets/d/1IhFOYMk8RvgX18F5m-jSST9Uc1winvtjPHLqd8Qh
 - https://www.ac-illust.com/
 ファビコン作成
 - https://logo-maker.stores.jp/
+- https://ao-system.net/favicon/
+ロゴ作成
+- https://logo-maker.stores.jp/
+アイコン使用
+- https://fontawesome.com/

@@ -49,7 +49,6 @@ header {
 footer {
   width: 100%;
   height: 60px;
-  /*background-color: #d9d9f3;*/
   color: #444a5b;
   text-align: center;
 }
@@ -113,7 +112,7 @@ li:last-child {
 }
 
 .main-visual {
-  background-image: url(mainvisual.jpg);
+  background-image: image-url("../images/mainvisual.jpg");
   width: 60%;
   height: 700px;
   background-size: cover;
@@ -160,7 +159,7 @@ li:last-child {
 
 /*サインアップ画面*/
 .main {
-  background-image: url(mainvisual.jpg);
+  background-image: image-url("../images/mainvisual.jpg");
   width: 100%;
   height: 700px;
   background-size: cover;
