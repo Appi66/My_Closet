@@ -9,11 +9,11 @@
       </dl>
       <dl>
         <dt>following</dt>
-        <dd><p class="center"><%= link_to user.followings.count, user_followings_path(user), remote: true, class: "link" %>　<%= link_to user_followings_path(user) do %><i class="fas fa-clipboard-list"></i><% end %></p></dd>
+        <dd><p class="center"><%= user.followings.count %>　<%= link_to user_followings_path(user) do %><i class="fas fa-clipboard-list"></i><% end %></p></dd>
       </dl>
       <dl>
         <dt>follower</dt>
-        <dd><p class="center"><%= link_to user.followers.count, user_followers_path(user), remote: true, class: "link" %>　<%= link_to user_followers_path(user) do %><i class="fas fa-clipboard-list"></i><% end %></p></dd>
+        <dd><p class="center"><%= user.followers.count %>　<%= link_to user_followers_path(user) do %><i class="fas fa-clipboard-list"></i><% end %></p></dd>
       </dl>
       <dl>
         <dt>posts</dt>
