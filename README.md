@@ -22,9 +22,9 @@
 お気に入りのコーディネートを多くの人に見てもらいたいとき。
 
 ## 設計書
-ER図：https://drive.google.com/file/d/1fn5g_aOX52yQUlyk-Rxcgqdey6udfgRs/view?usp=sharing
-テーブル定義書：https://docs.google.com/spreadsheets/d/1uiTcivdnoWYs2WSRv4NfICGChYKMkenPop6vBDxEXAs/edit?usp=sharing
-詳細設計：https://docs.google.com/spreadsheets/d/1EnSt2YJy6xga9KJVqqWWAssEKiS288GV0k3RWIMgMF8/edit?usp=sharing
+ER図：https://drive.google.com/file/d/1fn5g_aOX52yQUlyk-Rxcgqdey6udfgRs/view?usp=sharing. 
+テーブル定義書：https://docs.google.com/spreadsheets/d/1uiTcivdnoWYs2WSRv4NfICGChYKMkenPop6vBDxEXAs/edit?usp=sharing. 
+詳細設計：https://docs.google.com/spreadsheets/d/1EnSt2YJy6xga9KJVqqWWAssEKiS288GV0k3RWIMgMF8/edit?usp=sharing. 
 
 
 
@@ -39,13 +39,13 @@ https://docs.google.com/spreadsheets/d/1IhFOYMk8RvgX18F5m-jSST9Uc1winvtjPHLqd8Qh
 - IDE：Cloud9
 
 ## 使用素材
-写真利用
+写真利用. 
 - https://stocksnap.io/
-- https://www.ac-illust.com/
-ファビコン作成
+- https://www.ac-illust.com/. 
+ファビコン作成. 
 - https://logo-maker.stores.jp/
-- https://ao-system.net/favicon/
-ロゴ作成
-- https://logo-maker.stores.jp/
-アイコン使用
-- https://fontawesome.com/
+- https://ao-system.net/favicon/. 
+ロゴ作成. 
+- https://logo-maker.stores.jp/. 
+アイコン使用. 
+- https://fontawesome.com/. 
