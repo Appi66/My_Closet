@@ -1,7 +1,7 @@
 # My Closet
 
 ## サイト概要
-自分自身のお家のクローゼットを持ち歩け,またコーディネートを共有できるファッションに特化したSNSサイトです。
+自分自身のお家のクローゼットを持ち歩け、またコーディネートを共有できるファッションに特化したSNSサイトです。
 自身の所有している服をアプリケーションに保存することで服を買いに行った際に、同じような服を買ってしまったということを防ぐためにご使用いただけます。
 また、Out Fit Of The Day（OOTD）としてコーディネートを公開し、ユーザー同士で交流を図ることもできます。
 
@@ -34,7 +34,7 @@ ER図：https://drive.google.com/file/d/1fn5g_aOX52yQUlyk-Rxcgqdey6udfgRs/view?u
 https://docs.google.com/spreadsheets/d/1IhFOYMk8RvgX18F5m-jSST9Uc1winvtjPHLqd8QhhHg/edit?usp=sharing
 
 ## 開発環境
-- OS：MacOS
+- OS：Amazon Linux
 - 言語：HTML,CSS,JavaScript,Ruby
 - フレームワーク：Ruby on Rails
 - JSライブラリ：jQuery
@@ -46,3 +46,4 @@ https://docs.google.com/spreadsheets/d/1IhFOYMk8RvgX18F5m-jSST9Uc1winvtjPHLqd8Qh
 - https://logo-maker.stores.jp/
 - https://ao-system.net/favicon/. 
 - https://fontawesome.com/. 
+- https://jp.freepik.com/
