@@ -2,14 +2,13 @@
     <% item_images.each do |item_image| %>
       <div class="index-card">
         <p class="center"><%= link_to item_image_path(item_image.id) do %>
-        <%= image_tag item_image.get_image(300,250) %>
+          <%= image_tag item_image.get_image(300,250) %>
         <% end %></p>
         <table>
             <tr>
                 <td>Category..</td>
                 <td><%= item_image.category.name %></td>
             </tr>
-
             <tr>
                 <td>Name.........</td>
                 <td><%= item_image.name %></td>
