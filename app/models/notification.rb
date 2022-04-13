@@ -1,6 +1,6 @@
 class Notification < ApplicationRecord
   
-  #スコープ(新着順)
+  # スコープ(新着順)
   default_scope->{order(created_at: :desc)}
 
   belongs_to :post_image, optional: true
