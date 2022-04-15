@@ -31,6 +31,9 @@
           <li>
             <span class="header-link"><%= link_to item_images_path, class: "link" do %><i class="fas fa-tshirt"></i> MyCloset<% end %></span>
           </li>
+          <% if unchecked_nortifications.any? %>
+            <i class="fas fa-exclamation" style="color: red;"></i>
+          <% end %>
           <li>
             <span class="header-link"><%= link_to user_notifications_path(current_user.id), class: "link" do %><i class="fas fa-bell"></i> Notice<% end %></span>
           </li>
