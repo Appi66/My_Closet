@@ -26,6 +26,13 @@ class UsersController < ApplicationController
   def withdraw
   end
 
+  def favorites
+    @user = User.find(params[:id])
+    favorites = Favorite.where(user_id: @user.id).pluck(:post_image_id)
+    @favorite_post_images = PostImage.find(favorites)
+    @favorite_post_images = Kaminari.paginate_array(@favorite_post_images).page(params[:page])
+  end
+
   private
 
   def user_params
