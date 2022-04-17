@@ -1,0 +1,42 @@
+
+<div class="index-position">
+  <div class="side-index"></div>
+  <div class="card-wrap">
+    <% favorite_post_images.each do |post_image| %>
+      <div class="index-card">
+        <table>
+          <td>
+            <%= link_to user_path(post_image.user.id), class: "link" do %>
+            <%= image_tag post_image.user.get_profile_image(50,50), class: "profile-image" %>
+            <% end %>
+          </td>
+          <td>
+            <%= link_to user_path(post_image.user.id), class: "link" do %>
+            <%= post_image.user.name %>
+            <% end %>
+          </td>
+        </table>
+        <p class="center"><%= link_to post_image_path(post_image.id) do %>
+          <%= image_tag post_image.get_image(300,250) %>
+          <% end %></p>
+
+
+        <!--いいね-->
+        <div>
+          <div id="favorite_buttons_<%= post_image.id %>">
+            <%= render "favorites/favorites", post_image: post_image %>
+          </div>
+          <div>
+            コメント<%= post_image.post_comments.count %>件
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div class="side-index"></div>
+</div>
+<div class="paginate-box">
+  <div class="paginate">
+        <%= paginate favorite_post_images %>
+  </div>
+</div>
