@@ -1,6 +1,5 @@
 
 <h2 class="heading">My Page</h2>
-<p><%= link_to "❤", favorites_user_path(@user) %></p>
   <div class="user-page">
     <!--ユーザー詳細-->
     <div class="sidebar">
@@ -24,9 +23,25 @@
 
     </div>
     <div class="user-post">
-    <!--ユーザーの投稿一覧-->
-      <div class="card-wrap">
-        <%= render 'post_images/index', post_images: @post_images %>
+      <!--タブ部分-->
+      <ul class="tab-list list-unstyled">
+        <li class="tab tab-active">
+          <p class="center">My Posts</p>
+        </li>
+        <li class="tab">
+          <p class="center">My Favorites</p>
+        </li>
+      </ul>
+      <!--タブで選択された要素部分-->
+      <div class="tabbox-contents">
+        <div class="tabbox box-show">
+          <%= render 'post_images/index', post_images: @post_images %>
+          <%= paginate @post_images %>
+        </div>
+        <div class="tabbox">
+          <%= render 'favorites', favorite_post_images: @favorite_post_images %>
+        </div>
       </div>
+
     </div>
 </div>
