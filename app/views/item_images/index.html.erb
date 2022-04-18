@@ -13,6 +13,11 @@
   　   <!--ジャンル一覧-->
       <table class="category-position">
          <tbody>
+           <tr>
+             <td>
+               <p class="category"><%= link_to "全アイテム", item_images_path , class: "link"%> </p>
+             </td>
+           </tr>
            <% @categories.each do |category| %>
            <tr>
              <td>
@@ -21,7 +26,7 @@
            </tr>
            <% end %>
          </tbody>
-      </table>
+      　</table>
     </div>
   </div>
   <!--ユーザーの投稿一覧-->
