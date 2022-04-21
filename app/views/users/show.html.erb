@@ -1,5 +1,5 @@
 
-<h2 class="heading">My Page</h2>
+<h2 class="heading"><%= @user.name%>'s Page</h2>
   <div class="user-page">
     <!--ユーザー詳細-->
     <div class="sidebar">
@@ -26,10 +26,10 @@
       <!--タブ部分-->
       <ul class="tab-list list-unstyled">
         <li class="tab tab-active">
-          <p class="center">My Posts</p>
+          <p class="center"><%= @user.name%>'s Posts</p>
         </li>
         <li class="tab">
-          <p class="center">My Favorites</p>
+          <p class="center"><%= @user.name%>'s Favorites</p>
         </li>
       </ul>
       <!--タブで選択された要素部分-->
