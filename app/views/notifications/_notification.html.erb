@@ -1,0 +1,13 @@
+<% visiter = notification.visiter %>
+<% post_image = notification.post_image %>
+
+<div>
+  <div class="notice">
+  ★ <%= notification_form(notification) %><br>
+  <%= "(#{time_ago_in_words(notification.created_at)} before)" %>
+  <br>
+  <% if !@comment.nil? %>
+  <p>コメント：<%= @comment %></p>
+  <% end %>
+  </div>
+</div>

@@ -1,0 +1,42 @@
+<div class="main">
+  <div class="touka">
+    <div class="flame-sign">
+      <h2 class="heading">Sign up</h2>
+        <div class="show-card">
+
+          <%= form_with model: @user, url: user_registration_path do |f| %>
+            <%= render "devise/shared/error_messages", resource: resource %>
+
+          <div class="field">
+            <p class="center"><%= f.label :name %></p>
+            <p class="center"><%= f.text_field :name %></p>
+          </div>
+
+          <div class="field">
+            <p class="center"><%= f.label :email %></p>
+            <p class="center"><%= f.email_field :email, autocomplete: "email" %></p>
+          </div>
+
+          <div class="field">
+            <p class="center"><%= f.label :password %></p>
+             <% if @minimum_password_length %>
+               <p class="center"><em>(<%= @minimum_password_length %> characters minimum)</em></p>
+             <% end %>
+             <p class="center"><%= f.password_field :password, autocomplete: "new-password" %></p>
+          </div>
+
+          <div class="field">
+            <p class="center"><%= f.label :password_confirmation %></p>
+            <p class="center"><%= f.password_field :password_confirmation, autocomplete: "new-password" %></p>
+          </div>
+
+          <div class="actions">
+            <p class="center"><%= f.submit "Sign up", class: "submit" %></p>
+          </div>
+          <% end %>
+
+        <%= render "devise/shared/links" %>
+      </div>
+    </div>
+  </div>
+</div>

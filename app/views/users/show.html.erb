@@ -1,0 +1,47 @@
+
+<h2 class="heading"><%= @user.name%>'s Page</h2>
+  <div class="user-page">
+    <!--ユーザー詳細-->
+    <div class="sidebar">
+      <div id="user_info">
+        <%= render "user_info", user: @user %>
+      </div>
+
+
+    <!--フォローボタン-->
+    <div id="follow_button">
+      <%= render "relationships/follow_button", user: @user %>
+    </div>
+
+  <!--編集リンク-->
+     <div>
+       <% if @user == current_user %>
+         <p><%= link_to edit_user_path(@user),class: "submit link" do %>Edit<% end %></p>
+
+       <% end %>
+     </div>
+
+    </div>
+    <div class="user-post">
+      <!--タブ部分-->
+      <ul class="tab-list list-unstyled">
+        <li class="tab tab-active">
+          <p class="center"><%= @user.name%>'s Posts</p>
+        </li>
+        <li class="tab">
+          <p class="center"><%= @user.name%>'s Favorites</p>
+        </li>
+      </ul>
+      <!--タブで選択された要素部分-->
+      <div class="tabbox-contents">
+        <div class="tabbox box-show">
+          <%= render 'post_images/index', post_images: @post_images %>
+          <%= paginate @post_images %>
+        </div>
+        <div class="tabbox">
+          <%= render 'favorites', favorite_post_images: @favorite_post_images %>
+        </div>
+      </div>
+
+    </div>
+</div>

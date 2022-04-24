@@ -1,0 +1,11 @@
+<h2 class="heading">OOTD</h2>
+  <div class="index-position">
+    <div class="side-index"></div>
+        <%= render 'index', post_images: @post_images %>
+    <div class="side-index"></div>
+  </div>
+  <div class="paginate-box">
+    <div class="paginate">
+        <%= paginate @post_images %>
+    </div>
+  </div>

@@ -1,0 +1,29 @@
+<div class="flame">
+  <div class="show-card">
+
+
+    <p class="center"><%= image_tag @item_image.get_image(300,250) %></p>
+    <table>
+      <tr>
+        <td>Category..</td>
+        <td><%= @item_image.category.name %></td>
+      </tr>
+      <tr>
+        <td>Name.........</td>
+        <td><%= @item_image.name %></td>
+      </tr>
+      <tr>
+        <td>Brand........</td>
+        <td><%= @item_image.brand_name %></td>
+      </tr>
+      <tr>
+        <td>Date.........</td>
+        <td><%= @item_image.created_at.strftime('%Y/%m/%d') %></td>
+      </tr>
+    </table>
+
+    <%= link_to edit_item_image_path(@item_image.id), class: "gray" do %><i class="far fa-edit"></i><% end %>
+    <%= link_to item_image_path(@item_image), method: :delete, "data-confirm" => "本当に削除しますか？", class: "gray" do %><i class="far fa-trash-alt"></i><% end %>
+
+  </div>
+</div>

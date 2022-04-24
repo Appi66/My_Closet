@@ -1,0 +1,6 @@
+
+<%= flash[:alert] %>
+<%= form_with model: [post_image, post_comment],local: false do |f| %></p>
+  <p class="center"><%= f.text_area :comment, rows: '5', placeholder: "コメント", id: "new_comment" %></p>
+  <p class="center"><%= f.submit "Send", class: "submit" %></p>
+<% end %>

@@ -1,0 +1,15 @@
+<div class="flame">
+  <h2 class="heading">Edit</h2>
+  <div class="show-card">
+
+    <%= form_with model: @post_image, url: post_image_path(@post_image.id), method: :patch do |f| %>
+      <p class="center"><%= image_tag @post_image.get_image(300,250) %></p>
+      <p class="center">Caption</p>
+      <p class="center"><%= f.text_area :caption %></p>
+
+      <p class="center"><%= f.submit 'Repost', class: "submit" %></p>
+
+    <% end %>
+    <%= link_to post_image_path(@post_image.id), class: "gray" do %><i class="fas fa-arrow-alt-circle-left"></i><% end %>
+  </div>
+</div>

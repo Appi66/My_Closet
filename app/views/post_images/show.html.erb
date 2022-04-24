@@ -1,0 +1,44 @@
+<div class="flame">
+  <div class="show-card">
+    <table>
+      <td>
+        <%= link_to user_path(@post_image.user.id), class: "link" do %>
+        <%= image_tag @post_image.user.get_profile_image(50,50), class: "profile-image" %>
+        <% end %>
+      </td>
+      <td>
+        <%= link_to user_path(@post_image.user.id), class: "link" do %>
+        <%= @post_image.user.name %>
+        <% end %>
+      </td>
+    </table>
+    <p class="center"><%= image_tag @post_image.get_image(300,250) %></p>
+    <p><%= @post_image.caption %></p>
+    <%= @post_image.created_at.strftime('%Y/%m/%d') %>
+
+
+
+  <!--いいね-->
+    <div id="favorite_buttons_<%= @post_image.id %>">
+      <%= render "favorites/favorites", post_image: @post_image %>
+    </div>
+    <div>
+      コメント<%= @post_image.post_comments.count %>件
+    </div>
+
+    <!--コメント件数、コメントフォームへのリンク-->
+　　<p><%= link_to post_image_post_comments_path(@post_image.id), class: "submit link" do %>コメントする/見る<% end %>
+    </p>
+
+
+
+    <!--編集・削除リンク　投稿者にのみ表示-->
+    <div>
+      <%= link_to post_images_path, class: "gray" do %><i class="fas fa-arrow-alt-circle-left"></i><% end %>
+   <% if @post_image.user == current_user %>
+      <%= link_to edit_post_image_path(@post_image.id), class: "gray" do %><i class="far fa-edit"></i><% end %>
+      <%= link_to post_image_path(@post_image), method: :delete, "data-confirm" => "本当に削除しますか？", class: "gray" do %><i class="far fa-trash-alt"></i><% end %>
+   <% end %>
+    </div>
+  </div>
+</div>

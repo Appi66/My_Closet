@@ -1,0 +1,25 @@
+<h2>User Info</h2>
+      <dl>
+        <dt><%= image_tag user.get_profile_image(100,100), class: "profile-image" %></dt>
+        <dd><p class="name"><%= user.name %></p></dd>
+      </dl>
+      <dl>
+        <dt>intr.</dt>
+        <dd><%= user.introduction %></dd>
+      </dl>
+      <dl>
+        <dt>following</dt>
+        <dd><p class="center"><%= user.followings.count %>　<%= link_to user_followings_path(user) do %><i class="fas fa-clipboard-list"></i><% end %></p></dd>
+      </dl>
+      <dl>
+        <dt>follower</dt>
+        <dd><p class="center"><%= user.followers.count %>　<%= link_to user_followers_path(user) do %><i class="fas fa-clipboard-list"></i><% end %></p></dd>
+      </dl>
+      <dl>
+        <dt>posts</dt>
+        <dd><p class="center"><%= user.post_images.count %></p></dd>
+      </dl>
+      <dl>
+        <dt>items</dt>
+        <dd><p class="center"><%= user.item_images.count %></p></dd>
+      </dl>

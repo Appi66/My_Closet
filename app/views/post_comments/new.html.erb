@@ -1,0 +1,13 @@
+ <div class="flame">
+  <h2 class="heading">Create Comment</h2>
+  <div class="show-card">
+    <% if @post_comment.errors.any? %>
+      <p class="center">コメントが空欄です</p>
+    <% end %>
+    <%= form_with model: @post_comment do |f| %>
+      <p class="center">Comment</p>
+      <p class="center"><%= f.text_area :comment, rows: '5', placeholder: "コメント" %></p>
+      <p class="center"><%= f.submit 'Send', class: "submit" %></p>
+    <% end %>
+    </div>
+  </div>

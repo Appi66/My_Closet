@@ -6,11 +6,71 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= favicon_link_tag('favicon.ico') %>
   </head>
 
   <body>
+    <header>
+      <div class="wrap">
+      <% if user_signed_in? %>
+        <div class="logo"><%= link_to post_images_path do %><%= image_tag('logo.png') %><% end %></div>
+      <% else %>
+        <div class="logo"><%= link_to root_path do %><%= image_tag('logo.png') %><% end %></div>
+      <% end %>
+        <div id="sp-menu">
+        <ul>
+        <% if user_signed_in? %>
+          <li>
+            <span class="header-link"><%= link_to new_post_image_path, class: "link" do %><i class="fas fa-camera"></i> Post<% end %></span>
+          </li>
+          <li>
+            <span class="header-link"><%= link_to user_path(current_user.id), class: "link" do %><i class="far fa-user-circle"></i> MyPage<% end %></span>
+          </li>
+          <li>
+            <span class="header-link"><%= link_to item_images_path, class: "link" do %><i class="fas fa-tshirt"></i> MyCloset<% end %></span>
+          </li>
+          <% if unchecked_nortifications.any? %>
+            <i class="fas fa-exclamation" style="color: red;"></i>
+          <% end %>
+          <li>
+            <span class="header-link"><%= link_to user_notifications_path(current_user.id), class: "link" do %><i class="fas fa-bell"></i> Notice<% end %></span>
+          </li>
+          <li>
+            <span class="header-link"><%= link_to destroy_user_session_path, method: :delete, class: "link" do %><i class="fas fa-sign-out-alt"></i> LogOut<% end %>
+          </li>
+        <% else %>
+          <li>
+            <span class="header-link"><%= link_to about_path, class: "link" do %><i class="far fa-star"></i> About<% end %></span>
+          </li>
+          <li>
+            <span class="header-link"><%= link_to new_user_registration_path, class: "link" do %><i class="fas fa-user-plus"></i> SignUp<% end %></span>
+          </li>
+          <li>
+            <span class="header-link"><%= link_to new_user_session_path, class: "link" do %><i class="fas fa-sign-in-alt"></i> LogIn<% end %></span>
+          </li>
+
+         <% end %>
+        </ul>
+        </div>
+        <div id="hm-icon">
+          <a class="menu-trigger" href="#">
+            <span></span>
+            <span></span>
+            <span></span>
+          </a>
+        </div>
+      </div>
+    </header>
     <%= yield %>
+    <span id="back">
+      <a href="#">
+        <i class="far fa-arrow-alt-circle-up"></i>
+      </a>
+    </span>
   </body>
+  <footer>
+    <p>Appi66</p>
+  </footer>
 </html>

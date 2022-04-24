@@ -1,0 +1,17 @@
+<div class="flame">
+  <h2 class="heading">Edit Item</h2>
+  <div class="show-card">
+    <%= form_with model: @item_image, url: item_image_path(@item_image.id), method: :patch do |f| %>
+      <p class="center"><%= image_tag @item_image.get_image(300,250) %></p>
+      <p class="center"><%= f.file_field :image, accept: "image/*" %></p>
+      <p class="center">Category</p>
+      <p class="center"><%= f.collection_select :category_id, Category.all, :id, :name, autofocus: true, id:"inputCategory_id" %></p>
+      <p class="center">Name</p>
+      <p class="center"><%= f.text_field :name, autofocus: true, id:"inputName" %></p>
+      <p class="center">Brand</p>
+      <p class="center"><%= f.text_field :brand_name, autofocus: true, id:"inputBrand_name" %></p>
+
+      <p class="center"><%= f.submit 'Edit', class: "submit" %></p>
+    <% end %>
+  </div>
+</div>

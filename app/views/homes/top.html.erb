@@ -1,0 +1,15 @@
+<div class="top-main">
+  <div class="main-visual">
+  </div>
+  <div class="main-message">
+    <p class="main-visual-text"><span class="emphasis">ファッション好き</span>が<br>
+    集う場所</p>
+    <div class="button">
+    <% if user_signed_in? %>
+      <%= link_to post_images_path, class: "link" do %><div class="btn btn-border">Go!</div><% end %>
+    <% else %>
+      <%= link_to new_user_registration_path, class: "link" do %><div class="btn btn-border">Join!</div><% end %><br>
+    <% end %>
+    </div>
+  </div>
+</div>
