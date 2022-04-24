@@ -2,10 +2,14 @@
   <% users.each do |user| %>
     <table>
       <td>
+        <%= link_to user_path(user.id), class: "link" do %>
         <%= image_tag user.get_profile_image(100,100), class: "profile-image" %>
+        <% end %>
       </td>
       <td>
+        <%= link_to user_path(user.id), class: "link" do %>
         <%= user.name %>
+        <% end %>
       </td>
     </table>
 
