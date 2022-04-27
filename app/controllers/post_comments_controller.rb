@@ -1,4 +1,5 @@
 class PostCommentsController < ApplicationController
+  before_action :authenticate_user!
 
   def index
     @post_image = PostImage.find(params[:post_image_id])

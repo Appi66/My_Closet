@@ -1,4 +1,5 @@
 class ItemImagesController < ApplicationController
+  before_action :authenticate_user!
   def new
     @item_image = ItemImage.new
   end
