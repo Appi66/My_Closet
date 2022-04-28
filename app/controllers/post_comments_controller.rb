@@ -1,10 +1,11 @@
 class PostCommentsController < ApplicationController
   before_action :authenticate_user!
+  before_action :ensure_user, only: [:destroy]
 
   def index
     @post_image = PostImage.find(params[:post_image_id])
     @post_comment = PostComment.new
-   
+
   end
 
 
@@ -34,9 +35,15 @@ class PostCommentsController < ApplicationController
 
 
   private
-  
+
   def post_comment_params
     params.require(:post_comment).permit(:comment)
+  end
+
+  def ensure_user
+    @post_comments = current_user.post_comments
+    @post_comment = @post_comments.find_by(id: params[:id])
+    redirect_to post_images_path unless @post_comment
   end
 
 end
