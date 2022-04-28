@@ -29,13 +29,13 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    @user = User.find(params[:id])
-    if @user != current_user
-      redirect_to post_images_path
-    else
+    @user = User.find(current_user.id)
+    # if @user != current_user
+    #   redirect_to post_images_path
+    # else
       @user.destroy
       redirect_to :root
-    end
+    # end
   end
 
   def withdraw
