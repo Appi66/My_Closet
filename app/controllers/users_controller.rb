@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
-  # before_action :ensure_user, only: [:edit, :update, :destroy]
 
   def show
     @user = User.find(params[:id])
@@ -30,12 +29,8 @@ class UsersController < ApplicationController
 
   def destroy
     @user = User.find(current_user.id)
-    # if @user != current_user
-    #   redirect_to post_images_path
-    # else
-      @user.destroy
+    @user.destroy
       redirect_to :root
-    # end
   end
 
   def withdraw
@@ -54,17 +49,5 @@ class UsersController < ApplicationController
     params.require(:user).permit(:name, :profile_image, :introduction)
   end
 
-  # def ensure_user
-  #   @user = current_user
-  #   @user = @user.find_by(id: params[:id])
-  #   redirect_to post_images_path unless @user
-
-  # end
-
-  # def ensure_user
-  #   @users = User.all
-  #   @user = current_user
-  #   redirect_to post_images_path unless @user
-  # end
 
 end
