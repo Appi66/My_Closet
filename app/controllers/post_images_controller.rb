@@ -1,4 +1,7 @@
 class PostImagesController < ApplicationController
+  before_action :authenticate_user!
+  before_action :ensure_user, only: [:edit, :update, :destroy]
+
   def new
     @post_image = PostImage.new
   end
@@ -46,5 +49,13 @@ class PostImagesController < ApplicationController
   def post_image_params
     params.require(:post_image).permit(:image, :caption)
   end
+
+  def ensure_user
+    @post_images = current_user.post_images
+    @post_image = @post_images.find_by(id: params[:id])
+    redirect_to post_images_path unless @post_image
+  end
+
+
 
 end
