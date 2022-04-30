@@ -236,23 +236,23 @@ li:last-child {
 
 .submit {
   display: inline-block;
-  border-radius: 20%;          /* 角丸       */
+  border-radius: 20%;
   font-size: 11pt;
   font-weight: bold;
-  text-align: center;      /* 文字位置   */
-  cursor: pointer;     /* カーソル   */
-  padding: 10px 10px;   /* 余白       */
-  background: rgba(157, 211, 168, 0.90);     /* 背景色     */
+  text-align: center;
+  cursor: pointer;
+  padding: 10px 10px;
+  background: rgba(157, 211, 168, 0.90);
   color: #ffffff;
-  line-height: 1em;         /* 1行の高さ  */
-  transition: .3s;         /* なめらか変化 */
-  box-shadow: 6px 6px 3px #666666;  /* 影の設定 */
-  border: 2px solid rgba(157, 211, 168, 0.90);    /* 枠の指定 */
+  line-height: 1em;
+  transition: .3s;
+  box-shadow: 6px 6px 3px #666666;
+  border: 2px solid rgba(157, 211, 168, 0.90);
   margin: 10px;
   font-family:  'Kiwi Maru','Bodoni 72','Constantia',sans-serif;
 }
 .submit:hover {
-  box-shadow: none;        /* カーソル時の影消去 */
+  box-shadow: none;
   color: rgba(157, 211, 168, 0.90);
   background: #ffffff;
 }
@@ -260,23 +260,23 @@ li:last-child {
 
 .withdraw {
   display       : inline-block;
-  border-radius : 20%;          /* 角丸       */
-  font-size     : 11pt;        /* 文字サイズ */
-  text-align    : center;      /* 文字位置   */
-  cursor        : pointer;     /* カーソル   */
-  padding       : 10px 10px;   /* 余白       */
-  background    : rgba(255, 255, 255, 0.90);     /* 背景色     */
-  color         : #ceefe4;    /* 文字色     */
-  line-height   : 1em;         /* 1行の高さ  */
-  transition    : .3s;         /* なめらか変化 */
-  box-shadow    : 6px 6px 3px #666666;  /* 影の設定 */
-  border        : 2px solid rgba(157, 211, 168, 0.90);    /* 枠の指定 */
+  border-radius : 20%;
+  font-size     : 11pt;
+  text-align    : center;
+  cursor        : pointer;
+  padding       : 10px 10px;
+  background    : rgba(255, 255, 255, 0.90);
+  color         : #ceefe4;
+  line-height   : 1em;
+  transition    : .3s;
+  box-shadow    : 6px 6px 3px #666666;
+  border        : 2px solid rgba(157, 211, 168, 0.90);
   margin: 10px;
 }
 .withdraw:hover {
-  box-shadow    : none;        /* カーソル時の影消去 */
-  color         : rgba(255, 255, 255, 0.90);     /* 背景色     */
-  background    : #ceefe4;     /* 文字色     */
+  box-shadow    : none;
+  color         : rgba(255, 255, 255, 0.90);
+  background    : #ceefe4;
 }
 
 .user-page {
@@ -296,7 +296,6 @@ li:last-child {
 
 .user-post {
   width: 70%;
-  /*margin: 0 auto;*/
 }
 
 dl {
@@ -323,9 +322,9 @@ dd {
   padding: 0.25em 0.5em;
   text-decoration: none;
   color: #FFF;
-  background: #ab0f50;/*背景色*/
-  border-bottom: solid 2px #d27d00;/*少し濃い目の色に*/
-  border-radius: 4px;/*角の丸み*/
+  background: #ab0f50;
+  border-bottom: solid 2px #d27d00;
+  border-radius: 4px;
   box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
   font-weight: bold;
 }
@@ -342,8 +341,6 @@ dd {
 
 .comment {
   border-bottom: dotted 1px #9dd3a8;
-  /*margin-left: auto;*/
-  /*margin-right: auto;*/
 }
 
 .category {
@@ -915,11 +912,13 @@ span.current{
   .category-position {
     margin: 0 auto;
   }
+}
 
+@media screen and (max-width:390px) {
   .search-btn {
   font-size: 12px;
   text-align: center;
   border-radius: 5px;
+  width: 70px;
   }
 }
-
